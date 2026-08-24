@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -119,11 +119,11 @@
                   <i class="fa fa-leaf feature-icon"></i>
                   <h4 class="feat-title">Creative Design</h4>
 -->
-                      <p><img alt="download ebook" src="assets/images/Strength%20Training%20Anatomy.jpg" width="200"
+                      <p><img alt="download ebook" src="assets/images/Strength-Training-Anatomy.jpg" width="200"
                           height="200" /></p>
                       <br />
 
-                      <a href="assets/Ebooks/Strength%20Training%20Anatomy%20-1.pdf" id="blocking">Strength Training
+                      <a href="assets/Ebooks/Strength-Training-Anatomy-1.pdf" id="blocking">Strength Training
                         Anatomy</a>
 
                     </div>
@@ -134,13 +134,13 @@
                   <i class="fa fa-mobile feature-icon"></i>
                   <h4 class="feat-title">Responsive Layouts</h4>
 -->
-                      <p><img alt="download ebook" src="assets/images/arnold%20training%20chest.jpg" width="200"
+                      <p><img alt="download ebook" src="assets/images/arnold-training-chest.jpg" width="200"
                           height="200" /></p>
 
                       <br />
 
 
-                      <a href="assets/Ebooks/arnold%20training%20chest.pdf" id="blocking">arnold training chest</a>
+                      <a href="assets/Ebooks/arnold-training-chest.pdf" id="blocking">arnold training chest</a>
                     </div>
                   </div>
                   <div class="col-md-4 col-sm-6">
@@ -149,12 +149,12 @@
                   <i class="fa fa-thumbs-o-up feature-icon"></i>
                   <h4 class="feat-title">Great Features</h4>
 -->
-                      <p><img alt="download ebook" src="assets/images/arnold%20training%20delts%20arm.jpg" width="200"
+                      <p><img alt="download ebook" src="assets/images/arnold-training-delts-arm.jpg" width="200"
                           height="200" /></p>
                       <br />
 
 
-                      <a href="assets/Ebooks/arnold%20training%20delts%20arms.pdf" id="blocking">arnold training delts
+                      <a href="assets/Ebooks/arnold-training-delts-arms.pdf" id="blocking">arnold training delts
                         arm</a>
 
                     </div>
@@ -165,13 +165,13 @@
                   <i class="fa fa-gears feature-icon"></i>
                   <h4 class="feat-title">Multiple Options</h4>
 -->
-                      <p><img alt="download ebook" src="assets/images/arnold%20training%20back%20legs%20abs.jpg"
+                      <p><img alt="download ebook" src="assets/images/arnold-training-back-legs-abs.jpg"
                           width="200" height="200" />
                       </p>
                       <br />
 
 
-                      <a href="assets/Ebooks/arnold%20training%20legs%20back%20abs.pdf" id="blocking">arnold training
+                      <a href="assets/Ebooks/arnold-training-legs-back-abs.pdf" id="blocking">arnold training
                         back
                         legs abs</a>
                     </div>
@@ -183,12 +183,12 @@
                   <h4 class="feat-title">Quality Code</h4>
 -->
                       <p><img alt="download ebook"
-                          src="assets/images/Men's%20Health%20-%20Total%20Body%20Muscle%20Plan.jpg" width="200"
+                          src="assets/images/Mens-Health-Total-Body-Muscle-Plan.jpg" width="200"
                           height="200" />
                       </p>
                       <br />
 
-                      <a href="assets/Ebooks/Men's%20Health%20-%20Total%20Body%20Muscle%20Plan.pdf" id="blocking">Men's
+                      <a href="assets/Ebooks/Mens-Health-Total-Body-Muscle-Plan.pdf" id="blocking">Men's
                         Health - Total Body Muscle Plan</a>
                     </div>
                   </div>
@@ -199,12 +199,12 @@
                   <h4 class="feat-title">Quality Code</h4>
 -->
                       <p> <img alt="download ebook"
-                          src="assets/images/Lyle%20McDonald%20-%20A%20Guide%20to%20Flexible%20Dieting.jpg" width="200"
+                          src="assets/images/Lyle-McDonald-A-Guide-to-Flexible-Dieting.jpg" width="200"
                           height="200" /></p>
                       <br />
 
 
-                      <a href="assets/Ebooks/Lyle%20McDonald%20-%20A%20Guide%20to%20Flexible%20Dieting.pdf"
+                      <a href="assets/Ebooks/Lyle-McDonald-A-Guide-to-Flexible-Dieting.pdf"
                         id="blocking">Lyle McDonald - A Guide to Flexible Dieting</a>
                     </div>
                   </div>
@@ -214,12 +214,12 @@
                   <i class="fa fa-code feature-icon"></i>
                   <h4 class="feat-title">Quality Code</h4>
 -->
-                      <p> <img alt="download ebook" src="assets/images/Brink's%20Bodybuilding%20Revealed.jpg"
+                      <p> <img alt="download ebook" src="assets/images/Brinks-Bodybuilding-Revealed.jpg"
                           width="200" height="200" /></p>
                       <br />
 
 
-                      <a href="assets/Ebooks/Brink's%20Bodybuilding%20Revealed.pdf" id="blocking">Brink's Bodybuilding
+                      <a href="assets/Ebooks/Brinks-Bodybuilding-Revealed.pdf" id="blocking">Brink's Bodybuilding
                         Revealed</a>
                     </div>
                   </div>
@@ -230,11 +230,11 @@
                   <h4 class="feat-title">Quality Code</h4>
 -->
                       <p> <img alt="download ebook"
-                          src="assets/images/Christopher%20Gerriero%20-%20Maximize%20Your%20Metabolism.jpg" width="200"
+                          src="assets/images/Christopher-Gerriero-Maximize-Your-Metabolism.jpg" width="200"
                           height="200" /></p>
                       <br />
 
-                      <a href="assets/Ebooks/Christopher%20Gerriero%20-%20Maximize%20Your%20Metabolism.pdf"
+                      <a href="assets/Ebooks/Christopher-Gerriero-Maximize-Your-Metabolism.pdf"
                         id="blocking">Christopher Gerriero - Maximize Your Metabolism</a>
                     </div>
                   </div>
@@ -245,12 +245,12 @@
                   <h4 class="feat-title">Quality Code</h4>
 -->
                       <p> <img alt="download ebook"
-                          src="assets/images/Kevin%20Trudeau%20-%20Natural%20Cures%20-%20Jan.%202006%20ebook.jpg"
+                          src="assets/images/Kevin-Trudeau-Natural-Cures-Jan-2006-ebook.jpg"
                           width="200" height="200" /></p>
                       <br />
 
 
-                      <a href="assets/Ebooks/Kevin%20Trudeau%20-%20Natural%20Cures%20-%20Jan.%202006%20ebook.pdf"
+                      <a href="assets/Ebooks/Kevin-Trudeau-Natural-Cures-Jan-2006-ebook.pdf"
                         id="blocking">Kevin Trudeau - Natural Cures - Jan. 2006 ebook</a>
                     </div>
                   </div>
@@ -261,12 +261,12 @@
                   <h4 class="feat-title">Awesome Support</h4>
 -->
                       <p><img alt="download ebook"
-                          src="assets/images/Mackie%20Shilstone%20-%20The%20Fat-Burning%20Bible.jpg" width="200"
+                          src="assets/images/Mackie-Shilstone-The-Fat-Burning-Bible.jpg" width="200"
                           height="200" /></p>
                       <br />
 
 
-                      <a href="assets/Ebooks/Mackie%20Shilstone%20-%20The%20Fat-Burning%20Bible.pdf" id="blocking">Kevin
+                      <a href="assets/Ebooks/Mackie-Shilstone-The-Fat-Burning-Bible.pdf" id="blocking">Kevin
                         Trudeau - Natural Cures - Jan. 2006 ebook</a>
                     </div>
                   </div>

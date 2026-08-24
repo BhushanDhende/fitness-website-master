@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -117,7 +117,7 @@
             <!--            <h1 class="error-title"><span class="fa fa-bug"></span></h1>-->
             <div class="error-content">
               <!--              <span>Opps!</span>-->
-              <img src="assets/images/muscle%20man.jpg" alt="muscle man" style="max-width:100%; height:auto; display:block; margin:0 auto;">
+              <img src="assets/images/muscle-man.jpg" alt="muscle man" style="max-width:100%; height:auto; display:block; margin:0 auto;">
               <!--              <a class="error-home" href="index.html">Home Page</a>-->
             </div>
           </div>

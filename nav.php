@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 $isLoggedIn = isset($_SESSION['id']);
 
@@ -266,7 +266,7 @@ if (isset($_POST['login'])) {
         <!-- TEXT BASED LOGO -->
         <a class="navbar-brand" href="index.php">Lean'N'Green</a>
         <!-- IMG BASED LOGO  -->
-        <!--            <a class="navbar-brand" href="index.html"><img src="assets/images/New%20LeanNGreen.png" alt="logo" width="200" height="100"></a> -->
+        <!--            <a class="navbar-brand" href="index.html"><img src="assets/images/New-LeanNGreen.png" alt="logo" width="200" height="100"></a> -->
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <?php
@@ -276,38 +276,38 @@ if (isset($_POST['login'])) {
         <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
           <li class="<?php echo ($currentPage == 'index.php') ? 'active' : ''; ?>"><a href="index.php">Home</a></li>
           <li
-            class="dropdown <?php echo ($currentPage == 'Muscles.php' || $currentPage == 'Terminolgies.php' || $currentPage == 'Plant Protein.php') ? 'active' : ''; ?>">
+            class="dropdown <?php echo ($currentPage == 'Muscles.php' || $currentPage == 'Terminolgies.php' || $currentPage == 'Plant-Protein.php') ? 'active' : ''; ?>">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">BASIC <span class="fa fa-angle-down"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li class="<?php echo ($currentPage == 'Muscles.php') ? 'active' : ''; ?>"><a
                   href="Muscles.php">Muscles</a></li>
               <li class="<?php echo ($currentPage == 'Terminolgies.php') ? 'active' : ''; ?>"><a
                   href="Terminolgies.php">Terminologies</a></li>
-                  <li class="<?php echo ($currentPage == 'Plant Protein.php') ? 'active' : ''; ?>"><a
-                  href="Plant%20Protein.php">PLANT PROTEIN</a></li>
+                  <li class="<?php echo ($currentPage == 'Plant-Protein.php') ? 'active' : ''; ?>"><a
+                  href="Plant-Protein.php">PLANT PROTEIN</a></li>
             </ul>
           </li>
           <!--<li><a href="service.html">Service</a></li>-->
           <li
-            class="dropdown <?php echo ($currentPage == 'cardio.php' || $currentPage == 'Anatomy-&-Exercises.php') ? 'active' : ''; ?>">
+            class="dropdown <?php echo ($currentPage == 'cardio.php' || $currentPage == 'Anatomy-and-Exercises.php') ? 'active' : ''; ?>">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">WORKOUT <span
                 class="fa fa-angle-down"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li class="<?php echo ($currentPage == 'cardio.php') ? 'active' : ''; ?>"><a href="cardio.php">Cardio</a>
               </li>
-              <li class="<?php echo ($currentPage == 'Anatomy-&-Exercises.php') ? 'active' : ''; ?>"><a
-                  href="Anatomy-&-Exercises.php">Anatomy and Exercises</a></li>
+              <li class="<?php echo ($currentPage == 'Anatomy-and-Exercises.php') ? 'active' : ''; ?>"><a
+                  href="Anatomy-and-Exercises.php">Anatomy and Exercises</a></li>
             </ul>
           </li>
          
           <li
-            class="dropdown <?php echo ($currentPage == 'Vegan Diet Plan.php' || $currentPage == 'Workout Routine.php') ? 'active' : ''; ?>">
+            class="dropdown <?php echo ($currentPage == 'Vegan-Diet-Plan.php' || $currentPage == 'Workout-Routine.php') ? 'active' : ''; ?>">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">PLANS <span class="fa fa-angle-down"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li class="<?php echo ($currentPage == 'Vegan Diet Plan.php') ? 'active' : ''; ?>"><a
-                  href="Vegan%20Diet%20Plan.php">Vegan Diet Plan</a></li>
-              <li class="<?php echo ($currentPage == 'Workout Routine.php') ? 'active' : ''; ?>"><a
-                  href="Workout%20Routine.php">Workout Routine</a></li>
+              <li class="<?php echo ($currentPage == 'Vegan-Diet-Plan.php') ? 'active' : ''; ?>"><a
+                  href="Vegan-Diet-Plan.php">Vegan Diet Plan</a></li>
+              <li class="<?php echo ($currentPage == 'Workout-Routine.php') ? 'active' : ''; ?>"><a
+                  href="Workout-Routine.php">Workout Routine</a></li>
             </ul>
           </li>
           <li class="<?php echo ($currentPage == 'BMI-calc.php') ? 'active' : ''; ?>"><a href="BMI-calc.php">BMI CAL</a>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -135,7 +135,7 @@
       </div>     
          
           <div class="single-slide">
-        <img src="assets/images/eat%20lift%20sleep%20repeat.jpg" alt="img">
+        <img src="assets/images/eat-lift-sleep-repeat.jpg" alt="img">
         <div class="slide-content">
           <div class="container">
             <div class="row">
