@@ -831,7 +831,6 @@ img{
 }
 
 .why-choose-img {
-  display: inline-block;
   float: left;
   margin-right: 14px;
   margin-bottom: 3px;
@@ -1268,7 +1267,6 @@ img{
 	border-radius: 50%;
 }
 
-.testimonial-content{}
 .testimonial-content p{
 	font-size: 15px;
 }
@@ -1410,7 +1408,6 @@ img{
   text-transform: uppercase;
 }
 
-.blog-news-title .blog-date{}
 .blog-news-details{
   display: inline;
   float: left;
@@ -1847,7 +1844,8 @@ img{
   -ms-transform: scale(0);
   transform: scale(0);
   
-  -webkit-backface-visibility: hidden; /*for a smooth font */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; /*for a smooth font */
 }
 
 .single-item:hover .single-item-content{
@@ -1963,7 +1961,6 @@ img{
   font-size: 14px;
 }
 
-.sidebar-widget ul li{}
 .sidebar-widget ul>li>a{
   display: inline-block;
   font-size: 14px;
@@ -2065,7 +2062,6 @@ img{
   outline: none;
 }
 
-.widget-archive li{}
 .widget-archive li a{
   display: inline-block;
   font-size: 14px;
@@ -3432,6 +3428,7 @@ h1, h2, h3, h4, h5, h6 {
 .text-gradient {
   background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #06b6d4 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .hero-desc {
