@@ -1,361 +1,157 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Lean'N'Green : Ebooks</title>
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/icon" href="assets/images/favicon.ico" />
-  <!-- Font Awesome -->
-  <link href="assets/css/font-awesome.css" rel="stylesheet">
-  <!-- Bootstrap -->
-  <link href="assets/css/bootstrap.css" rel="stylesheet">
-  <!-- Slick slider -->
-  <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
-  <!-- Fancybox slider -->
-  <link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="screen" />
-  <!-- Animate css -->
-  <link rel="stylesheet" type="text/css" href="assets/css/animate.css" />
-  <!-- Bootstrap progressbar  -->
-  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-progressbar-3.3.4.css" />
-  <!-- Theme color -->
-  <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
-
-  <!-- Main Style -->
-  <link href="style.css" rel="stylesheet">
-
-  <!-- Fonts -->
-
-  <!-- Open Sans for body font -->
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <!-- Lato for Title -->
-  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-  <style>
-    #blocking {
-      background-color: black;
-      color: white;
-      text-align: center;
-      padding: 5px;
-    }
-  </style>
-</head>
-
-<body>
-  <!-- BEGAIN PRELOADER -->
-  <div id="preloader">
-    <div id="status">&nbsp;</div>
-  </div>
-  <!-- END PRELOADER -->
-
-  <!-- SCROLL TOP BUTTON -->
-  <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
-  <!-- END SCROLL TOP BUTTON -->
-
-
-  <?php
-  include('nav.php');
-  ?>
+<?php
+$pageTitle = "Lean'N'Green : Free Bodybuilding Ebooks & PDF Guides";
+include('header.php');
+?>
 
 
   <!-- Start single page header -->
-  <section id="single-page-header8">
-    <div class="overlay">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-sm-6 col-xs-12">
-            <div class="single-page-header-left">
-              <h2>Ebooks</h2>
-              <p>
-              <blockquote>"A Book is a gift you can open again and again because reading a good book is taking a
-                journey!"</blockquote>
-              </p>
-            </div>
+  <section id="single-page-header8" style="background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding:60px 0; border-bottom:1px solid rgba(255,255,255,0.08);">
+    <div class="container">
+      <div class="row" style="display:flex; align-items:center; flex-wrap:wrap;">
+        <div class="col-md-7 col-sm-7 col-xs-12">
+          <div class="single-page-header-left">
+            <span class="hero-badge" style="margin-bottom:10px;"><i class="fa fa-book-open"></i> Knowledge Base</span>
+            <h1 style="color:#fff; font-family:'Outfit',sans-serif; font-size:36px; font-weight:800; margin:6px 0 12px 0;">
+              Free Fitness &amp; Bodybuilding Ebooks
+            </h1>
+            <p style="color:#94a3b8; font-size:15px; margin:0;">
+              "A Book is a gift you can open again and again. Reading a good training book is taking a journey toward your peak self."
+            </p>
           </div>
-          <div class="col-md-6 col-sm-6 col-xs-12">
-            <div class="single-page-header-right">
-              <ol class="breadcrumb">
-                <li><a href="index.php">Home</a></li>
-                <li class="active">EBOOKS</li>
-              </ol>
-            </div>
-          </div>
+        </div>
+        <div class="col-md-5 col-sm-5 col-xs-12 text-right">
+          <ol class="breadcrumb" style="background:rgba(255,255,255,0.06); border-radius:10px; display:inline-block; padding:10px 18px; margin:15px 0 0 0;">
+            <li><a href="index.php" style="color:#34d399;"><i class="fa fa-home"></i> Home</a></li>
+            <li class="active" style="color:#e2e8f0;">Ebooks</li>
+          </ol>
         </div>
       </div>
     </div>
   </section>
   <!-- End single page header -->
 
-  <div class="col-md-8">
-    <div class="blog-archive-left">
+  <section style="padding:60px 0; background:#f8fafc;">
+    <div class="container">
+      <div class="row">
+        <!-- Main Content (8 cols) -->
+        <div class="col-md-8 col-sm-12">
+          <div class="section-title-area" style="margin-bottom:35px;">
+            <h2 style="font-family:'Outfit',sans-serif; font-size:28px; font-weight:800; color:#0f172a; margin-top:0;">
+              Download Bodybuilding Guides &amp; Manuals
+            </h2>
+            <p style="color:#64748b; font-size:15px;">
+              All ebooks are provided in high quality, fully optimized PDF format for instant reading on phone, tablet, or desktop.
+            </p>
+          </div>
 
-      <!-- Start Feature -->
-      <section id="feature">
-        <div class="container">
           <div class="row">
-            <div class="col-md-12">
-              <div class="title-area">
-                <h2 class="title">Free BodyBuilding Ebooks</h2>
-                <span class="line"></span>
-                <p>We have free ebooks and pdfs for you ! Read it , grab some know-how and become one of these Hunks !!
-                </p>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="feature-content">
-                <div class="row">
-                  <div class="col-md-4 col-sm-6">
-                    <div class="single-feature wow zoomIn">
-                      <!--
-                  <i class="fa fa-leaf feature-icon"></i>
-                  <h4 class="feat-title">Creative Design</h4>
--->
-                      <p><img alt="download ebook" src="assets/images/Strength-Training-Anatomy.jpg" width="200"
-                          height="200" /></p>
-                      <br />
+            <?php
+            $ebooks = [
+              [
+                'title' => 'Strength Training Anatomy',
+                'author' => 'Frederic Delavier',
+                'img' => 'assets/images/Strength-Training-Anatomy.jpg',
+                'file' => 'assets/Ebooks/Strength-Training-Anatomy-1.pdf',
+                'size' => '~5.5 MB'
+              ],
+              [
+                'title' => 'Arnold Training: Chest',
+                'author' => 'Arnold Schwarzenegger',
+                'img' => 'assets/images/arnold-training-chest.jpg',
+                'file' => 'assets/Ebooks/arnold-training-chest.pdf',
+                'size' => '~2.2 MB'
+              ],
+              [
+                'title' => 'Arnold Training: Delts & Arms',
+                'author' => 'Arnold Schwarzenegger',
+                'img' => 'assets/images/arnold-training-delts-arm.jpg',
+                'file' => 'assets/Ebooks/arnold-training-delts-arms.pdf',
+                'size' => '~3.5 MB'
+              ],
+              [
+                'title' => 'Arnold Training: Legs, Back & Abs',
+                'author' => 'Arnold Schwarzenegger',
+                'img' => 'assets/images/arnold-training-back-legs-abs.jpg',
+                'file' => 'assets/Ebooks/arnold-training-legs-back-abs.pdf',
+                'size' => '~4.2 MB'
+              ],
+              [
+                'title' => 'Men\'s Health: Total Body Muscle Plan',
+                'author' => 'Men\'s Health Editors',
+                'img' => 'assets/images/Mens-Health-Total-Body-Muscle-Plan.jpg',
+                'file' => 'assets/Ebooks/Mens-Health-Total-Body-Muscle-Plan.pdf',
+                'size' => '~1.6 MB'
+              ],
+              [
+                'title' => 'A Guide to Flexible Dieting',
+                'author' => 'Lyle McDonald',
+                'img' => 'assets/images/Lyle-McDonald-A-Guide-to-Flexible-Dieting.jpg',
+                'file' => 'assets/Ebooks/Lyle-McDonald-A-Guide-to-Flexible-Dieting.pdf',
+                'size' => '~0.7 MB'
+              ],
+              [
+                'title' => 'Brink\'s Bodybuilding Revealed',
+                'author' => 'Will Brink',
+                'img' => 'assets/images/Brinks-Bodybuilding-Revealed.jpg',
+                'file' => 'assets/Ebooks/Brinks-Bodybuilding-Revealed.pdf',
+                'size' => '~7.4 MB'
+              ],
+              [
+                'title' => 'Maximize Your Metabolism',
+                'author' => 'Christopher Guerriero',
+                'img' => 'assets/images/Christopher-Gerriero-Maximize-Your-Metabolism.jpg',
+                'file' => 'assets/Ebooks/Christopher-Gerriero-Maximize-Your-Metabolism.pdf',
+                'size' => '~2.6 MB'
+              ],
+              [
+                'title' => 'Natural Cures "They" Don\'t Want You To Know',
+                'author' => 'Kevin Trudeau',
+                'img' => 'assets/images/Kevin-Trudeau-Natural-Cures-Jan-2006-ebook.jpg',
+                'file' => 'assets/Ebooks/Kevin-Trudeau-Natural-Cures-Jan-2006-ebook.pdf',
+                'size' => '~2.8 MB'
+              ],
+              [
+                'title' => 'The Fat Burning Bible',
+                'author' => 'Mackie Shilstone',
+                'img' => 'assets/images/Mackie-Shilstone-The-Fat-Burning-Bible.jpg',
+                'file' => 'assets/Ebooks/Mackie-Shilstone-The-Fat-Burning-Bible.pdf',
+                'size' => '~4.1 MB'
+              ]
+            ];
 
-                      <a href="assets/Ebooks/Strength-Training-Anatomy-1.pdf" id="blocking">Strength Training
-                        Anatomy</a>
-
+            foreach ($ebooks as $b): ?>
+              <div class="col-md-6 col-sm-6" style="margin-bottom:28px;">
+                <div class="ebook-preview-card" style="height:100%; display:flex; flex-direction:column; justify-content:space-between;">
+                  <div>
+                    <div class="ebook-cover-wrapper" style="height:210px;">
+                      <img src="<?php echo htmlspecialchars($b['img']); ?>" alt="<?php echo htmlspecialchars($b['title']); ?>" style="object-fit:cover; height:100%; width:100%;">
+                      <span class="badge-free">FREE PDF</span>
+                    </div>
+                    <div class="ebook-card-info" style="padding:16px;">
+                      <span style="font-size:11px; color:#10b981; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;"><?php echo htmlspecialchars($b['author']); ?></span>
+                      <h4 style="font-size:16px; font-weight:700; margin:4px 0 8px 0; color:#0f172a;"><?php echo htmlspecialchars($b['title']); ?></h4>
                     </div>
                   </div>
-                  <div class="col-md-4 col-sm-6">
-                    <div class="single-feature wow zoomIn">
-                      <!--
-                  <i class="fa fa-mobile feature-icon"></i>
-                  <h4 class="feat-title">Responsive Layouts</h4>
--->
-                      <p><img alt="download ebook" src="assets/images/arnold-training-chest.jpg" width="200"
-                          height="200" /></p>
-
-                      <br />
-
-
-                      <a href="assets/Ebooks/arnold-training-chest.pdf" id="blocking">arnold training chest</a>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                    <div class="single-feature wow zoomIn">
-                      <!--
-                  <i class="fa fa-thumbs-o-up feature-icon"></i>
-                  <h4 class="feat-title">Great Features</h4>
--->
-                      <p><img alt="download ebook" src="assets/images/arnold-training-delts-arm.jpg" width="200"
-                          height="200" /></p>
-                      <br />
-
-
-                      <a href="assets/Ebooks/arnold-training-delts-arms.pdf" id="blocking">arnold training delts
-                        arm</a>
-
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                    <div class="single-feature wow zoomIn">
-                      <!--
-                  <i class="fa fa-gears feature-icon"></i>
-                  <h4 class="feat-title">Multiple Options</h4>
--->
-                      <p><img alt="download ebook" src="assets/images/arnold-training-back-legs-abs.jpg"
-                          width="200" height="200" />
-                      </p>
-                      <br />
-
-
-                      <a href="assets/Ebooks/arnold-training-legs-back-abs.pdf" id="blocking">arnold training
-                        back
-                        legs abs</a>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                    <div class="single-feature wow zoomIn">
-                      <!--
-                  <i class="fa fa-code feature-icon"></i>
-                  <h4 class="feat-title">Quality Code</h4>
--->
-                      <p><img alt="download ebook"
-                          src="assets/images/Mens-Health-Total-Body-Muscle-Plan.jpg" width="200"
-                          height="200" />
-                      </p>
-                      <br />
-
-                      <a href="assets/Ebooks/Mens-Health-Total-Body-Muscle-Plan.pdf" id="blocking">Men's
-                        Health - Total Body Muscle Plan</a>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                    <div class="single-feature wow zoomIn">
-                      <!--
-                  <i class="fa fa-code feature-icon"></i>
-                  <h4 class="feat-title">Quality Code</h4>
--->
-                      <p> <img alt="download ebook"
-                          src="assets/images/Lyle-McDonald-A-Guide-to-Flexible-Dieting.jpg" width="200"
-                          height="200" /></p>
-                      <br />
-
-
-                      <a href="assets/Ebooks/Lyle-McDonald-A-Guide-to-Flexible-Dieting.pdf"
-                        id="blocking">Lyle McDonald - A Guide to Flexible Dieting</a>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                    <div class="single-feature wow zoomIn">
-                      <!--
-                  <i class="fa fa-code feature-icon"></i>
-                  <h4 class="feat-title">Quality Code</h4>
--->
-                      <p> <img alt="download ebook" src="assets/images/Brinks-Bodybuilding-Revealed.jpg"
-                          width="200" height="200" /></p>
-                      <br />
-
-
-                      <a href="assets/Ebooks/Brinks-Bodybuilding-Revealed.pdf" id="blocking">Brink's Bodybuilding
-                        Revealed</a>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                    <div class="single-feature wow zoomIn">
-                      <!--
-                  <i class="fa fa-code feature-icon"></i>
-                  <h4 class="feat-title">Quality Code</h4>
--->
-                      <p> <img alt="download ebook"
-                          src="assets/images/Christopher-Gerriero-Maximize-Your-Metabolism.jpg" width="200"
-                          height="200" /></p>
-                      <br />
-
-                      <a href="assets/Ebooks/Christopher-Gerriero-Maximize-Your-Metabolism.pdf"
-                        id="blocking">Christopher Gerriero - Maximize Your Metabolism</a>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                    <div class="single-feature wow zoomIn">
-                      <!--
-                  <i class="fa fa-code feature-icon"></i>
-                  <h4 class="feat-title">Quality Code</h4>
--->
-                      <p> <img alt="download ebook"
-                          src="assets/images/Kevin-Trudeau-Natural-Cures-Jan-2006-ebook.jpg"
-                          width="200" height="200" /></p>
-                      <br />
-
-
-                      <a href="assets/Ebooks/Kevin-Trudeau-Natural-Cures-Jan-2006-ebook.pdf"
-                        id="blocking">Kevin Trudeau - Natural Cures - Jan. 2006 ebook</a>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                    <div class="single-feature wow zoomIn">
-                      <!--
-                  <i class="fa fa-smile-o feature-icon"></i>
-                  <h4 class="feat-title">Awesome Support</h4>
--->
-                      <p><img alt="download ebook"
-                          src="assets/images/Mackie-Shilstone-The-Fat-Burning-Bible.jpg" width="200"
-                          height="200" /></p>
-                      <br />
-
-
-                      <a href="assets/Ebooks/Mackie-Shilstone-The-Fat-Burning-Bible.pdf" id="blocking">Kevin
-                        Trudeau - Natural Cures - Jan. 2006 ebook</a>
-                    </div>
+                  <div class="ebook-card-footer" style="padding:12px 16px; background:#fafafa; border-top:1px solid #f1f5f9;">
+                    <span class="filesize-tag"><i class="fa fa-file-pdf" style="color:#ef4444;"></i> <?php echo $b['size']; ?></span>
+                    <a href="<?php echo htmlspecialchars($b['file']); ?>" download class="btn-download-sm">
+                      <i class="fa fa-download"></i> Download
+                    </a>
                   </div>
                 </div>
               </div>
-            </div>
+            <?php endforeach; ?>
+          </div>
+
+          <div style="background:#ffffff; border-radius:16px; padding:24px; box-shadow:0 6px 18px rgba(0,0,0,0.04); margin-top:20px;">
+            <?php include('comment.php'); ?>
           </div>
         </div>
-      </section>
-      <!-- End Feature -->
-
-
-
-
-
-
-      <div class="blog-single-bottom">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="blog-single-tag">
-              <span class="fa fa-tags"></span>
-              <a href="#">Workout,</a>
-              <a href="#">Gym,</a>
-              <a href="#">Exercise</a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="blog-single-social">
-              <a href="#"><i class="fa fa-facebook"></i></a>
-              <a href="#"><i class="fa fa-twitter"></i></a>
-              <a href="#"><i class="fa fa-linkedin"></i></a>
-              <a href="#"><i class="fa fa-google-plus"></i></a>
-              <a href="#"><i class="fa fa-pinterest"></i></a>
-            </div>
-          </div>
-        </div>
+        <!-- Sidebar (4 cols) -->
+        <?php include('sidebar.php'); ?>
       </div>
-      </article>
-      <!-- Start blog navigation -->
-      <div class="blog-navigation-area">
-        <div class="blog-navigation-prev">
-          <a href="#">
-            <h5>Books</h5>
-            <span>Previous Post</span>
-          </a>
-        </div>
-        <div class="blog-navigation-next">
-          <a href="#">
-            <h5>All about friends story</h5>
-            <span>Next Post</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Start Comment box -->
-      <?php include('comment.php'); ?>
-      <!-- End Comment box -->
     </div>
-  </div>
-  <?php
-  include('sidebar.php');
-  ?>
-  <!-- Start subscribe us -->
+  </section>
+
+  <!-- Start subscribe us & footer -->
   <?php include('footer.php'); ?>
-  <!-- End footer -->
-
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <!-- Bootstrap -->
-  <script src="assets/js/bootstrap.js"></script>
-  <!-- Slick Slider -->
-  <script type="text/javascript" src="assets/js/slick.js"></script>
-  <!-- mixit slider -->
-  <script type="text/javascript" src="assets/js/jquery.mixitup.js"></script>
-  <!-- Add fancyBox -->
-  <script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
-  <!-- counter -->
-  <script src="assets/js/waypoints.js"></script>
-  <script src="assets/js/jquery.counterup.js"></script>
-  <!-- Wow animation -->
-  <script type="text/javascript" src="assets/js/wow.js"></script>
-  <!-- progress bar   -->
-  <script type="text/javascript" src="assets/js/bootstrap-progressbar.js"></script>
-
-
-  <!-- Custom js -->
-  <script type="text/javascript" src="assets/js/custom.js"></script>
-
-</body>
-
-</html>
