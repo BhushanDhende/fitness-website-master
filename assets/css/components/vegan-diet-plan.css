@@ -1,0 +1,237 @@
+/* ==========================================================================
+   Full Week Vegan Diet Plan Styles
+   ========================================================================== */
+
+.diet-container {
+  padding: 40px 0 60px 0;
+  background: #f8fafc;
+}
+
+.diet-header-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.diet-filter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.diet-filter-btn {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.diet-filter-btn:hover {
+  background: #ecfdf5;
+  border-color: #10b981;
+  color: #059669;
+}
+
+.diet-filter-btn.active {
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-color: #10b981;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+}
+
+.diet-day-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.diet-day-card:hover {
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+}
+
+.diet-day-header {
+  background: #ffffff;
+  padding: 20px 28px;
+  border-bottom: 1.5px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.diet-day-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.diet-day-badge {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.diet-day-macros {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.macro-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.macro-cal {
+  background: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.macro-protein {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.macro-carbs {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.macro-fat {
+  background: #faf5ff;
+  color: #9333ea;
+  border: 1px solid #e9d5ff;
+}
+
+.diet-table-wrapper {
+  overflow-x: auto;
+}
+
+.diet-table {
+  width: 100%;
+  margin-bottom: 0;
+  border-collapse: collapse;
+}
+
+.diet-table th {
+  background: #f8fafc;
+  color: #334155;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 14px 18px;
+  border-bottom: 2px solid #e2e8f0;
+  border-top: none;
+}
+
+.diet-table td {
+  padding: 16px 18px;
+  vertical-align: middle;
+  border-top: 1px solid #f1f5f9;
+  font-size: 14px;
+  color: #334155;
+}
+
+.diet-table tbody tr:hover {
+  background: #fdfdfd;
+}
+
+.meal-time-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 12px;
+  border-radius: 15px;
+  white-space: nowrap;
+}
+
+.meal-breakfast {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.meal-lunch {
+  background: #e0e7ff;
+  color: #3730a3;
+  border: 1px solid #c7d2fe;
+}
+
+.meal-snack {
+  background: #fef9c3;
+  color: #854d0e;
+  border: 1px solid #fef08a;
+}
+
+.meal-dinner {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.meal-name {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+.meal-desc {
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+  .diet-day-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .diet-filter-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+}

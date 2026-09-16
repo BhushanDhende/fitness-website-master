@@ -100,6 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['subscribe_email'])) {
           Your ultimate destination for plant-powered fitness, anatomy insights, progressive workout routines, and free bodybuilding guides.
         </p>
         <div>
+          <div class="footer-contact-item"><i class="fa fa-map-marker-alt fa-map-marker"></i> Lean'N'Green Studio, Sector 15, CBD Belapur, Navi Mumbai, Maharashtra 400614, India</div>
           <div class="footer-contact-item"><i class="fa fa-phone"></i> +91 7021779054</div>
           <div class="footer-contact-item"><i class="fa fa-envelope"></i> bhushandhende34@gmail.com</div>
         </div>
@@ -114,6 +115,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['subscribe_email'])) {
           <li><a href="Plant-Protein.php">Plant Protein</a></li>
           <li><a href="food-nutrtion.php">Nutrition Guide</a></li>
           <li><a href="Ebooks.php">Free Ebooks</a></li>
+          <li><a href="privacy-policy.php">Privacy Policy</a></li>
+          <li><a href="terms.php">Terms &amp; Conditions</a></li>
         </ul>
       </div>
 
@@ -154,21 +157,63 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['subscribe_email'])) {
     </div>
 
     <!-- Bottom Bar -->
-    <div class="row footer-bottom-bar">
+    <div class="row footer-bottom-bar" style="align-items:center;">
       <div class="col-md-6 col-sm-6 text-left">
-        <p>
+        <p style="margin:0;">
           &copy; <?php echo date('Y'); ?> <span style="color:#e2e8f0; font-weight:600;">Lean'N'Green</span>. All rights reserved.
+          <span style="margin:0 8px; color:#475569;">&bull;</span>
+          <a href="privacy-policy.php" style="color:#94a3b8; text-decoration:none;">Privacy</a>
+          <span style="margin:0 8px; color:#475569;">&bull;</span>
+          <a href="terms.php" style="color:#94a3b8; text-decoration:none;">Terms</a>
         </p>
       </div>
       <div class="col-md-6 col-sm-6 text-right">
-        <p>
-          Crafted by <a href="https://github.com/callmeX34" target="_blank" rel="noopener" style="color:#10b981; font-weight:600; text-decoration:none;">callmeX</a>
+        <p style="margin:0;">
+          Crafted with plant power by <a href="https://github.com/callmeX34" target="_blank" rel="noopener" style="color:#10b981; font-weight:600; text-decoration:none;">callmeX</a>
         </p>
       </div>
     </div>
   </div>
 </footer>
 <!-- End footer -->
+
+<!-- Cookie Consent Banner -->
+<div id="cookieConsentBanner" class="cookie-consent-bar" style="display:none;" role="dialog" aria-label="Cookie consent">
+  <div class="cookie-consent-inner">
+    <div class="cookie-consent-text">
+      <i class="fa fa-cookie-bite cookie-consent-icon"></i>
+      <span>We use cookies to optimize site performance, remember your preferences, and analyze website traffic. By using Lean'N'Green, you agree to our <a href="privacy-policy.php">Privacy Policy</a>.</span>
+    </div>
+    <div class="cookie-consent-actions">
+      <button type="button" id="acceptCookiesBtn" class="btn-cookie-accept"><i class="fa fa-check"></i> Accept All</button>
+      <button type="button" id="declineCookiesBtn" class="btn-cookie-decline">Decline</button>
+    </div>
+  </div>
+</div>
+
+<!-- Sticky Mobile CTA Bar (Visible on mobile screens < 768px) -->
+<div class="sticky-mobile-cta" id="stickyMobileCta" aria-label="Mobile quick actions">
+  <a href="Anatomy-and-Exercises.php" class="mobile-cta-btn">
+    <i class="fa fa-dumbbell"></i>
+    <span>Exercises</span>
+  </a>
+  <a href="Workout-Routine.php" class="mobile-cta-btn">
+    <i class="fa fa-calendar-check"></i>
+    <span>Routines</span>
+  </a>
+  <a href="BMI-calc.php" class="mobile-cta-btn highlight">
+    <i class="fa fa-calculator"></i>
+    <span>BMI Calc</span>
+  </a>
+  <a href="Plant-Protein.php" class="mobile-cta-btn">
+    <i class="fa fa-seedling"></i>
+    <span>Protein</span>
+  </a>
+  <a href="Ebooks.php" class="mobile-cta-btn">
+    <i class="fa fa-book-open"></i>
+    <span>Ebooks</span>
+  </a>
+</div>
 
 <!-- Global JS Bundles -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

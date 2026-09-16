@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="favGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+  </defs>
+  <!-- Rounded squircle background -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#favGrad)" />
+  
+  <!-- Dumbbell barbell bar -->
+  <rect x="16" y="30" width="32" height="4" rx="2" fill="#FFFFFF" />
+  <!-- Dumbbell weight plates left -->
+  <rect x="13" y="23" width="4" height="18" rx="2" fill="#FFFFFF" />
+  <rect x="9" y="27" width="3" height="10" rx="1.5" fill="#E2E8F0" opacity="0.9" />
+  <!-- Dumbbell weight plates right -->
+  <rect x="47" y="23" width="4" height="18" rx="2" fill="#FFFFFF" />
+  <rect x="52" y="27" width="3" height="10" rx="1.5" fill="#E2E8F0" opacity="0.9" />
+
+  <!-- Stylized Green Leaf Arching Over -->
+  <path d="M32 18 C40 16, 50 24, 48 34 C40 36, 30 28, 32 18 Z" fill="#F0FDF4" />
+  <path d="M32 18 C36 24, 42 28, 48 34" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" />
+</svg>

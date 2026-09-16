@@ -2,7 +2,11 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-$siteTitle = isset($pageTitle) ? $pageTitle : "Lean'N'Green : Fitness & Nutrition";
+$siteTitle = isset($pageTitle) ? $pageTitle : "Lean'N'Green : Plant-Powered Fitness & Anatomy Training";
+$siteDescription = isset($pageDescription) ? $pageDescription : "Science-based workout routines, interactive human muscle anatomy guides, high-protein vegan nutrition plans, and free bodybuilding ebooks.";
+$siteKeywords = isset($pageKeywords) ? $pageKeywords : "fitness, muscle anatomy, bodybuilding, workout routines, vegan diet plan, plant protein, exercise database, BMI calculator";
+$canonicalUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$ogImage = isset($pageOgImage) ? $pageOgImage : "assets/images/og-share-card.jpg";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,12 +15,44 @@ $siteTitle = isset($pageTitle) ? $pageTitle : "Lean'N'Green : Fitness & Nutritio
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?php echo htmlspecialchars($siteTitle); ?></title>
+  <meta name="description" content="<?php echo htmlspecialchars($siteDescription); ?>">
+  <meta name="keywords" content="<?php echo htmlspecialchars($siteKeywords); ?>">
+  <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>">
   
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/icon" href="assets/images/favicon.ico" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lean'N'Green">
+  <meta property="og:title" content="<?php echo htmlspecialchars($siteTitle); ?>">
+  <meta property="og:description" content="<?php echo htmlspecialchars($siteDescription); ?>">
+  <meta property="og:image" content="<?php echo htmlspecialchars($ogImage); ?>">
+  <meta property="og:url" content="<?php echo htmlspecialchars($canonicalUrl); ?>">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<?php echo htmlspecialchars($siteTitle); ?>">
+  <meta name="twitter:description" content="<?php echo htmlspecialchars($siteDescription); ?>">
+  <meta name="twitter:image" content="<?php echo htmlspecialchars($ogImage); ?>">
+  
+  <!-- Modern Favicon Set -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/images/favicon.ico">
+  
+  <!-- Analytics Container (GA4) -->
+  <?php if (!empty(getenv('GA_TRACKING_ID'))): ?>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<?= htmlspecialchars(getenv('GA_TRACKING_ID')) ?>"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '<?= htmlspecialchars(getenv('GA_TRACKING_ID')) ?>');
+  </script>
+  <?php endif; ?>
   
   <!-- CSS Bundles -->
   <link href="assets/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="assets/css/bootstrap.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
   <link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="screen" />

@@ -1,0 +1,300 @@
+/* ==========================================================================
+   Plant Protein Guide & Table Component Styles
+   ========================================================================== */
+
+.protein-table-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  margin: 35px 0 25px 0;
+}
+
+.protein-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 16px;
+}
+
+.protein-table-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.protein-search-wrapper {
+  position: relative;
+  min-width: 250px;
+}
+
+.protein-search-input {
+  width: 100%;
+  padding: 8px 14px 8px 36px;
+  border-radius: 20px;
+  border: 1.5px solid #e2e8f0;
+  font-size: 13.5px;
+  color: #0f172a;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.protein-search-input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.protein-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 13px;
+  pointer-events: none;
+}
+
+/* Category Filter Navigation */
+.protein-filter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.protein-filter-btn {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.protein-filter-btn:hover {
+  background: #ecfdf5;
+  border-color: #10b981;
+  color: #059669;
+}
+
+.protein-filter-btn.active {
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-color: #10b981;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Table Styling */
+.protein-table-responsive {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #f1f5f9;
+}
+
+.protein-table {
+  width: 100%;
+  margin-bottom: 0;
+  border-collapse: collapse;
+}
+
+.protein-table th {
+  background: #f8fafc;
+  color: #334155;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 14px 16px;
+  border-bottom: 2px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.protein-table td {
+  padding: 14px 16px;
+  vertical-align: middle;
+  border-top: 1px solid #f1f5f9;
+  font-size: 13.5px;
+  color: #334155;
+}
+
+.protein-table tbody tr:hover {
+  background: #fdfdfd;
+}
+
+.protein-food-name {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 14.5px;
+}
+
+.protein-food-type {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.protein-value-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  font-weight: 700;
+  font-size: 13.5px;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.badge-complete {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 15px;
+  white-space: nowrap;
+}
+
+.badge-incomplete {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f8fafc;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 15px;
+  white-space: nowrap;
+}
+
+.category-tag {
+  display: inline-block;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+/* Share & Tags Bottom Area */
+.blog-single-bottom-modern {
+  margin-top: 35px;
+  padding-top: 22px;
+  border-top: 1.5px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.blog-tag-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.blog-tag-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.blog-tag-chip {
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 15px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.blog-tag-chip:hover {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.social-share-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.social-share-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.social-share-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.social-share-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+}
+
+.btn-share-fb { background: #1877f2; }
+.btn-share-twitter { background: #0f1419; }
+.btn-share-linkedin { background: #0a66c2; }
+.btn-share-whatsapp { background: #25d366; }
+.btn-share-pinterest { background: #bd081c; }
+
+@media (max-width: 768px) {
+  .protein-table-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .protein-search-wrapper {
+    width: 100%;
+  }
+  .blog-single-bottom-modern {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

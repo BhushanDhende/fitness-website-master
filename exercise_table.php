@@ -5,13 +5,32 @@ include_once('db.php');
 $targetMuscle = isset($muscleGroup) ? $muscleGroup : 'Chest';
 $exercises = [];
 
+// Map aliases so singular, plural, and common terms match seamlessly
+$groupAliases = [
+    'Shoulder' => ['Shoulder', 'Shoulders'],
+    'Shoulders' => ['Shoulder', 'Shoulders'],
+    'Abdomen' => ['Abdomen', 'Abs', 'Core'],
+    'Abs' => ['Abdomen', 'Abs', 'Core'],
+    'Buttocks' => ['Buttocks', 'Glutes'],
+    'Glutes' => ['Buttocks', 'Glutes'],
+    'Arms' => ['Arms', 'Biceps', 'Triceps'],
+    'Back' => ['Back', 'Lats'],
+    'Chest' => ['Chest', 'Pectorals'],
+    'Legs' => ['Legs', 'Quadriceps', 'Hamstrings', 'Calves'],
+    'Cardio' => ['Cardio']
+];
+
+$searchGroups = isset($groupAliases[$targetMuscle]) ? $groupAliases[$targetMuscle] : [$targetMuscle];
+$placeholders = implode(',', array_fill(0, count($searchGroups), '?'));
+
 if (isset($pdo) && $pdo) {
-    $stmt = $pdo->prepare("SELECT * FROM exercises WHERE muscle_group = ? ORDER BY name");
-    $stmt->execute([$targetMuscle]);
+    $stmt = $pdo->prepare("SELECT * FROM exercises WHERE muscle_group IN ($placeholders) ORDER BY name");
+    $stmt->execute($searchGroups);
     $exercises = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } elseif (isset($conn) && $conn) {
-    $stmt = $conn->prepare("SELECT * FROM exercises WHERE muscle_group = ? ORDER BY name");
-    $stmt->bind_param("s", $targetMuscle);
+    $types = str_repeat('s', count($searchGroups));
+    $stmt = $conn->prepare("SELECT * FROM exercises WHERE muscle_group IN ($placeholders) ORDER BY name");
+    $stmt->bind_param($types, ...$searchGroups);
     $stmt->execute();
     $res = $stmt->get_result();
     while ($r = $res->fetch_assoc()) {

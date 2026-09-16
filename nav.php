@@ -4,7 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 $isLoggedIn = isset($_SESSION['id']);
 
-include('db.php'); // Include database connection file
+include_once('db.php'); // Include database connection file
 
 // Logout logic
 if (isset($_POST['logout'])) {
@@ -18,22 +18,32 @@ if (isset($_POST['signup'])) {
   if (empty($conn)) {
     echo "<script>alert('Database connection is not available yet.');</script>";
   } else {
-    $name = $conn->real_escape_string($_POST['signup_name']);
-    $user = $conn->real_escape_string($_POST['signup_username']);
-    $email = $conn->real_escape_string($_POST['signup_email']);
-    $pass = password_hash($_POST['signup_password'], PASSWORD_DEFAULT);
+    $name = trim($_POST['signup_name'] ?? '');
+    $user = trim($_POST['signup_username'] ?? '');
+    $email = trim($_POST['signup_email'] ?? '');
+    $pass = password_hash($_POST['signup_password'] ?? '', PASSWORD_DEFAULT);
 
     // Check if username or email exists
-    $check = $conn->query("SELECT * FROM users WHERE username='$user' OR email='$email'");
-    if ($check && $check->num_rows > 0) {
-      echo "<script>alert('Username or Email already exists!');</script>";
-    } else {
-      $sql = "INSERT INTO users (name, username, email, password) VALUES ('$name', '$user', '$email', '$pass')";
-      if ($conn->query($sql) === TRUE) {
-        echo "<script>alert('Signup successful! You can now login.');</script>";
+    $check = $conn->prepare("SELECT id FROM users WHERE username = ? OR email = ?");
+    if ($check) {
+      $check->bind_param("ss", $user, $email);
+      $check->execute();
+      $check->store_result();
+      if ($check->num_rows > 0) {
+        echo "<script>alert('Username or Email already exists!');</script>";
       } else {
-        echo "<script>alert('Signup failed!');</script>";
+        $insert = $conn->prepare("INSERT INTO users (name, username, email, password) VALUES (?, ?, ?, ?)");
+        if ($insert) {
+          $insert->bind_param("ssss", $name, $user, $email, $pass);
+          if ($insert->execute()) {
+            echo "<script>alert('Signup successful! You can now login.');</script>";
+          } else {
+            echo "<script>alert('Signup failed!');</script>";
+          }
+          $insert->close();
+        }
       }
+      $check->close();
     }
   }
 }
@@ -54,32 +64,29 @@ if (isset($_POST['login'])) {
   if (empty($conn)) {
     echo "<script>alert('Database connection is not available yet.');</script>";
   } else {
-    $userEscaped = $conn->real_escape_string($user);
-    $sql = "SELECT * FROM users WHERE username='$userEscaped'";
-    $result = $conn->query($sql);
-    if ($result && $result->num_rows == 1) {
-      $row = $result->fetch_assoc();
-      if (password_verify($pass, $row['password'])) {
-        $_SESSION['id'] = $row['id'];
-        $_SESSION['username'] = $row['username'];
-        echo "<script>alert('Login successful!'); window.location='index.php';</script>";
-        exit;
+    $stmt = $conn->prepare("SELECT id, username, password FROM users WHERE username = ?");
+    if ($stmt) {
+      $stmt->bind_param("s", $user);
+      $stmt->execute();
+      $res = $stmt->get_result();
+      if ($res && $res->num_rows === 1) {
+        $row = $res->fetch_assoc();
+        if (password_verify($pass, $row['password'])) {
+          $_SESSION['id'] = $row['id'];
+          $_SESSION['username'] = $row['username'];
+          echo "<script>alert('Login successful!'); window.location='index.php';</script>";
+          exit;
+        } else {
+          echo "<script>alert('Invalid password!');</script>";
+        }
       } else {
-        echo "<script>alert('Invalid password!');</script>";
+        echo "<script>alert('User not found!');</script>";
       }
-    } else {
-      echo "<script>alert('User not found!');</script>";
+      $stmt->close();
     }
   }
 }
 ?>
-
-<!-- High-Speed CDN Icons (Guarantees zero missing icon boxes on InfinityFree / any server) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Start header -->
 <header id="header">
@@ -213,27 +220,6 @@ if (isset($_POST['login'])) {
   </div>
 </div>
 <!-- End login modal window -->
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var signupBtn = document.getElementById('signup-btn');
-    var loginBtn = document.getElementById('login-btn');
-    var loginContent = document.getElementById('login-content');
-    var signupContent = document.getElementById('signup-content');
-    if (signupBtn && loginBtn && loginContent && signupContent) {
-      signupBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        loginContent.style.display = 'none';
-        signupContent.style.display = 'block';
-      });
-      loginBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        signupContent.style.display = 'none';
-        loginContent.style.display = 'block';
-      });
-    }
-  });
-</script>
 
 <!-- BEGIN MENU -->
 <section id="menu-area">

@@ -1,38 +1,332 @@
 /* ==========================================================================
-   Anatomy & Exercise Table Styles
+   Interactive Muscle Anatomy & Exercise Guide Styles
    ========================================================================== */
 
-.list {
+.anatomy-explorer-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: 35px 24px 40px;
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.06);
+  max-width: 1040px;
+  margin: 0 auto 40px;
+  color: #0f172a;
+  position: relative;
+  overflow: hidden;
+}
+
+/* View Switcher Controls */
+.anatomy-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.anatomy-tab-btn {
+  background: #f1f5f9;
+  border: 1.5px solid #e2e8f0;
+  color: #475569;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.anatomy-tab-btn:hover {
+  background: #ecfdf5;
+  border-color: #10b981;
+  color: #059669;
+}
+
+.anatomy-tab-btn.active {
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-color: #10b981;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+}
+
+/* Interactive Anatomy Stage */
+.anatomy-stage {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  background: transparent;
+}
+
+.anatomy-view {
+  position: relative;
+  width: 100%;
+  display: none;
+}
+
+.anatomy-view.active {
   display: block;
-  align-self: center;
+  animation: fadeInStage 0.4s ease forwards;
 }
 
-.exercise-table {
-  margin: 30px auto;
-  border-collapse: separate;
-  border-spacing: 0 15px;
-  width: 60%;
-  background: #f9f9f9;
+@keyframes fadeInStage {
+  from { opacity: 0; transform: scale(0.99); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.anatomy-stage-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  filter: brightness(0.95);
+}
+
+/* Muscle Pointer Nodes & Hotspots */
+.muscle-pointer {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  text-decoration: none !important;
+  transition: transform 0.2s ease;
+}
+
+/* Pinpoint Radar Dot on Muscle */
+.muscle-pin {
+  width: 14px;
+  height: 14px;
+  background: #10b981;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 12px #10b981, 0 0 20px rgba(16, 185, 129, 0.6);
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.muscle-pin::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 50%;
+  border: 2px solid #10b981;
+  opacity: 0.8;
+  animation: radarPulse 2s infinite ease-out;
+}
+
+@keyframes radarPulse {
+  0% { transform: scale(0.8); opacity: 0.9; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* Pointer Line */
+.muscle-line {
+  height: 2px;
+  background: linear-gradient(90deg, #10b981, rgba(16, 185, 129, 0.3));
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Pointer Button Badge */
+.muscle-badge-btn {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid #10b981;
+  color: #ffffff !important;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.muscle-badge-btn .muscle-sub {
+  font-size: 11px;
+  color: #34d399;
+  font-weight: 500;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.muscle-pointer:hover .muscle-badge-btn {
+  background: #10b981;
+  color: #ffffff !important;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5);
+}
+
+.muscle-pointer:hover .muscle-badge-btn .muscle-sub {
+  background: #ffffff;
+  color: #065f46;
+}
+
+.muscle-pointer:hover .muscle-line {
+  background: #34d399;
+  box-shadow: 0 0 8px #10b981;
+}
+
+/* Orientations: Left Side vs Right Side */
+.pointer-right {
+  flex-direction: row;
+}
+
+.pointer-right .muscle-line {
+  width: 45px;
+}
+
+.pointer-left {
+  flex-direction: row-reverse;
+}
+
+.pointer-left .muscle-line {
+  width: 45px;
+  background: linear-gradient(-90deg, #10b981, rgba(16, 185, 129, 0.3));
+}
+
+/* Quick Muscle Category Grid Below Diagram */
+.muscle-grid-section {
+  padding: 30px 0 60px;
+}
+
+.muscle-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.muscle-card-btn {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px 20px;
+  text-decoration: none !important;
+  color: #0f172a !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+}
+
+.muscle-card-btn:hover {
+  border-color: #10b981;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(16, 185, 129, 0.12);
+}
+
+.muscle-card-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.muscle-card-icon {
+  width: 42px;
+  height: 42px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background: #ecfdf5;
+  color: #059669;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.25s ease;
 }
 
-.exercise-table td {
-  padding: 16px 0;
-  text-align: center;
+.muscle-card-btn:hover .muscle-card-icon {
+  background: #10b981;
+  color: #ffffff;
 }
 
-.exercise-btn:hover {
-  background: #388e3c;
+.muscle-card-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #0f172a;
+  margin: 0;
 }
 
-@media (max-width: 768px) {
-  .exercise-table {
-    width: 95%;
+.muscle-card-sub {
+  font-size: 12px;
+  color: #64748b;
+  margin: 2px 0 0 0;
+}
+
+.muscle-card-arrow {
+  color: #94a3b8;
+  font-size: 14px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.muscle-card-btn:hover .muscle-card-arrow {
+  color: #10b981;
+  transform: translateX(4px);
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 991px) {
+  .muscle-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+  
+  .pointer-right .muscle-line,
+  .pointer-left .muscle-line {
+    width: 25px;
+  }
+  
+  .muscle-badge-btn {
+    padding: 6px 12px;
+    font-size: 12.5px;
+  }
+  
+  .muscle-badge-btn .muscle-sub {
+    display: none;
+  }
+}
 
-  .exercise-btn {
-    width: 100%;
-    margin: 6px 0;
+@media (max-width: 650px) {
+  .anatomy-explorer-card {
+    padding: 20px 12px 30px;
+  }
+  
+  .muscle-line {
+    display: none !important;
+  }
+  
+  .muscle-badge-btn {
+    padding: 4px 8px;
+    font-size: 11px;
+    border-radius: 12px;
+  }
+  
+  .muscle-pin {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .muscle-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }

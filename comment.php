@@ -31,8 +31,8 @@ if (isset($_SESSION['id']) && isset($conn)) {
 // Handle comment submission
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['post_comment_submit'])) {
     if (!isset($_SESSION['id'])) {
-        $name = isset($_POST['name']) ? trim($conn->real_escape_string($_POST['name'])) : '';
-        $email = isset($_POST['email']) ? trim($conn->real_escape_string($_POST['email'])) : '';
+        $name = isset($_POST['name']) ? trim($_POST['name']) : '';
+        $email = isset($_POST['email']) ? trim($_POST['email']) : '';
     }
     $comment = isset($_POST['comment']) ? trim($_POST['comment']) : '';
 

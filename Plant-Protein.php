@@ -1,8 +1,26 @@
 <?php
-$pageTitle = "Lean'N'Green : Plant Protein";
+$pageTitle = "Lean'N'Green : Plant Protein Sources & Guide";
+$extraCss = 'assets/css/components/plant-protein.css';
 include('header.php');
-?>
+include_once('db.php');
 
+// Fetch plant protein data ordered by protein content descending
+$sql = "SELECT id, name, type, protein_per_100g, calories_per_100g, source_category, is_complete_protein, notes 
+        FROM plant_protein 
+        ORDER BY protein_per_100g DESC";
+$result = $conn->query($sql);
+$allFoods = [];
+$categories = [];
+if ($result && $result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $allFoods[] = $row;
+        $cat = $row['source_category'];
+        if (!in_array($cat, $categories)) {
+            $categories[] = $cat;
+        }
+    }
+}
+?>
 
   <!-- Start single page header -->
   <section id="single-page-header10">
@@ -13,8 +31,7 @@ include('header.php');
             <div class="single-page-header-left">
               <h2>Plant Proteins</h2>
               <p>
-              <blockquote>"There is absolutely no nutrient, no protein, no vitamin, no mineral that can't be obtained
-                from plant-based diet"</blockquote>
+              <blockquote>"There is absolutely no nutrient, no protein, no vitamin, no mineral that can't be obtained from a plant-based diet."</blockquote>
               </p>
             </div>
           </div>
@@ -22,8 +39,8 @@ include('header.php');
             <div class="single-page-header-right">
               <ol class="breadcrumb">
                 <li><a href="index.php">Home</a></li>
-                <li class="active">BASICS</li>
-                <li class="active">PLANT PROTEIN</li>
+                <li><a href="Plant-Protein.php">Basics</a></li>
+                <li class="active">Plant Protein</li>
               </ol>
             </div>
           </div>
@@ -38,174 +55,133 @@ include('header.php');
       <div class="row">
         <div class="col-md-8 col-sm-12">
           <div class="blog-archive-left">
-      <!-- Start blog news single -->
-      <article class="blog-news-single">
-        <div class="blog-news-title">
-          <h2>All about Proteins</h2>
-          <p>By <a class="blog-author" href="#">Vibhore Aggarwal</a> <span class="blog-date">|18 Jan 2016</span></p>
-        </div>
-        <div class="blog-news-details blog-single-details">
-          <h2>Protein in Vegetarian and Vegan Diets</h2>
-          <p>
-            Protein is a nutrient made of amino acids the building blocks for many of your body’s structures, including
-            muscle, bone, skin, and hair. They also play a role in the creation of many substances that your body
-            requires to go about its everyday business of living.
-          </p>
-          <h3>Plant Proteins</h3>
-          <p>
-            Most plant foods, with the
-            exception of soy, quinoa,
-            and spinach, may be low in
-            one or two of the essential
-            amino acids, but you can get
-            enough of all these amino
-            acids by including a variety of
-            whole plant foods in your diet. It was once thought that
-            plant proteins needed to be combined within a meal
-            by mixing grains and legumes to create a “complete”
-            protein, also called complementary proteins, with good
-            amounts of all essential amino acids. Now we know that
-            the liver can store the amino acids so we don’t have to
-            combine them in one meal.<br><br>
-            Legumes, which include beans, lentils, and dried peas,
-            and soy, nuts and seeds, are rich sources of protein,
-            but whole grains and vegetables contain protein, too.
-            <br><br>
-            Some whole grains, such as wheat varieties like farro,
-            Kamut®, and wheat berries provide up to 11 grams
-            of protein per cup. Even vegetables can provide
-            protein, such as spinach (5 grams per cup) and peas
-            (8 grams per cup).
-            A variety of easy-to-use meat alternatives can be
-            found in most supermarkets, such as veggie burgers,
-            meatless bacon, hot dogs, and ‘beef’ crumbles, as
-            well as faux chicken nuggets, sausage, and ‘beef’
-            strips. While these are simple solutions to meal
-            planning, you’re better off choosing minimally
-            processed plant foods that have lower levels of
-            sodium and no artificial additives.
-            Many plant proteins, including beans, lentils, and
-            soy, are naturally packed with other beneficial
-            nutrients like fiber, vitamins, minerals, healthy fat,
-            and antioxidants, and contain very little saturated
-            fat, sodium and cholesterol. This may be one reason
-            why vegetarian and vegan diets are linked with
-            lower disease risk.
-          </p>
-          <h3>Lacto-Ovo Vegetarians Proteins</h3>
-          <p>
-            Animal protein, such as that found in meat, dairy
-            and eggs, is considered “high quality” protein
-            because it has good amounts of all essential amino
-            acids. Meeting your protein needs may be more
-            easily accessed on a vegetarian (versus vegan) diet,
-            because you can include high quality animal protein
-            sources such as milk, cheese, cottage cheese, and
-            eggs to help meet protein needs. Some vegetarians
-            choose to use these animal proteins, however, it’s
-            important to choose reduced-fat dairy products and
-            eat dairy and eggs in moderation to avoid excess
-            intake of saturated fat and dietary cholesterol.
-          </p>
-          <h3>How much Proteins do we need?</h3>
-          <p>The overall daily protein recommendation for
-            vegetarians is the same as for every healthy person:
-            0.4 grams per pound of body weight. For example,
-            if you weigh 150 pounds, you would multiply 150 x
-            0.4 = 60 grams of protein for your daily need. Vegans
-            and older adults may benefit from a slightly higher
-            amount of protein—approximately 0.5 grams per
-            pound of body weight.
-          </p>
-          <h3>The Bottom Line</h3>
-          <p>
-            While many people think protein can be a challenge
-            for vegetarians and vegans, it’s easier than you think
-            to meet your needs. Focus on choices that include
-            plenty of whole, minimally processed plant foods
-            (see Protein-rich Plant Foods) at each meal and
-            snack, and avoid filling up on highly processed, low-
-            nutrient foods, such as chips, cookies and sweets,
-            and refined grain crackers, which can crowd out
-            protein in your diet.
-          </p>
-          
-
-          <?php
-          // Database connection
-          include('db.php');
-
-          
-          // Fetch plant protein data
-          $sql = "SELECT id, name, type, protein_per_100g, calories_per_100g, source_category, is_complete_protein, notes FROM plant_protein";
-          $result = $conn->query($sql);
-
-          echo '<br><h2>Plant Protein Sources Table</h2><br>';
-          echo '<div class="table-responsive">';
-          echo '<table class="table table-bordered">';
-          echo '<thead><tr>
-                  <th>No.</th>
-                  <th>Name</th>
-                  <th>Type</th>
-                  <th>Protein/100g (g)</th>
-                  <th>Calories/100g</th>
-                  <th>Category</th>
-                  <th>Complete Protein?</th>
-                  <th>Notes</th>
-                </tr></thead><tbody>';
-
-          if ($result && $result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-              echo '<tr>';
-              echo '<td>' . htmlspecialchars($row["id"]) . '</td>';
-              echo '<td>' . htmlspecialchars($row["name"]) . '</td>';
-              echo '<td>' . htmlspecialchars($row["type"]) . '</td>';
-              echo '<td>' . htmlspecialchars($row["protein_per_100g"]) . '</td>';
-              echo '<td>' . htmlspecialchars($row["calories_per_100g"]) . '</td>';
-              echo '<td>' . htmlspecialchars($row["source_category"]) . '</td>';
-              echo '<td>' . ($row["is_complete_protein"] ? 'Yes' : 'No') . '</td>';
-              echo '<td>' . htmlspecialchars($row["notes"]) . '</td>';
-              echo '</tr>';
-            }
-          } else {
-            echo '<tr><td colspan="8">No data found.</td></tr>';
-          }
-          echo '</tbody></table></div>';
-
-          
-          ?>
-
-
-
-
-
-
-          <div class="blog-single-bottom">
-            <div class="row">
-              <div class="col-md-8">
-                <div class="blog-single-tag">
-                  <span class="fa fa-tags"></span>
-                  <a href="#">Workout,</a>
-                  <a href="#">Gym,</a>
-                  <a href="#">Exercise</a>
-                </div>
+            <!-- Start blog news single -->
+            <article class="blog-news-single">
+              <div class="blog-news-title">
+                <h2>All About Plant Proteins</h2>
+                <p>By <a class="blog-author" href="#">Vibhore Aggarwal</a> <span class="blog-date">| Nutritional Science Review</span></p>
               </div>
-              <div class="col-md-4">
-                <div class="blog-single-social">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-linkedin"></i></a>
-                  <a href="#"><i class="fa fa-google-plus"></i></a>
-                  <a href="#"><i class="fa fa-pinterest"></i></a>
+              <div class="blog-news-details blog-single-details">
+                <h2>Protein in Vegetarian and Vegan Diets</h2>
+                <p>
+                  Protein is a macronutrient made of amino acids—the fundamental building blocks for your body's musculoskeletal structures, including lean muscle tissue, bones, skin, and connective tissues. They also synthesize vital enzymes, hormones, and neurotransmitters that sustain optimal daily performance.
+                </p>
+                
+                <h3>Plant Proteins &amp; Amino Acid Completeness</h3>
+                <p>
+                  Most plant foods, with notable exceptions such as soy (tofu, tempeh, edamame), quinoa, hemp seeds, spirulina, and nutritional yeast, contain varying proportions of essential amino acids. However, you can effortlessly achieve complete amino acid synergy by enjoying a diverse spectrum of whole plant foods across your daily meals. It was historically believed that plant proteins had to be combined within a single meal to form "complete" proteins. Contemporary nutritional science confirms that the body's circulating amino acid pool stores and combines amino acids over a 24-hour period.
+                </p>
+                <p>
+                  Legumes (including lentils, chickpeas, and black beans), soy products, raw nuts, and seeds provide exceptionally concentrated protein yields. Whole ancient grains like spelt, farro, wild rice, and rolled oats contribute meaningful amino acid mass while providing sustained complex carbohydrate fuel and prebiotic fiber.
+                </p>
+
+                <h3>How Much Protein Do We Need?</h3>
+                <p>
+                  The standard baseline recommendation for general health is roughly 0.8 grams per kilogram of body weight. For active individuals, resistance trainees, and plant-based athletes aiming to build or preserve lean muscle mass, sports nutrition science recommends <strong>1.4 to 2.0 grams of protein per kilogram of body weight</strong> (approximately 0.7 to 0.9 grams per pound).
+                </p>
+
+                <!-- Modern Plant Protein Table Card -->
+                <div class="protein-table-card">
+                  <div class="protein-table-header">
+                    <div>
+                      <h3 class="protein-table-title">
+                        <i class="fa fa-leaf" style="color: #10b981;"></i>
+                        Plant Protein Density Chart
+                      </h3>
+                      <p style="color: #64748b; font-size: 13.5px; margin: 4px 0 0 0;">
+                        Ranked by protein concentration per 100 grams. Filter by category or search foods.
+                      </p>
+                    </div>
+
+                    <!-- Quick Search Input -->
+                    <div class="protein-search-wrapper">
+                      <i class="fa fa-search protein-search-icon"></i>
+                      <input type="text" id="protein-search" class="protein-search-input" placeholder="Search protein source..." onkeyup="filterProteinTable()">
+                    </div>
+                  </div>
+
+                  <!-- Category Pills -->
+                  <div class="protein-filter-nav">
+                    <button type="button" class="protein-filter-btn active" onclick="filterProteinCategory('all', this)">
+                      <i class="fa fa-layer-group"></i> All Foods (<?= count($allFoods) ?>)
+                    </button>
+                    <?php foreach ($categories as $cat): ?>
+                      <button type="button" class="protein-filter-btn" onclick="filterProteinCategory('<?= htmlspecialchars(strtolower($cat)) ?>', this)">
+                        <?= htmlspecialchars($cat) ?>
+                      </button>
+                    <?php endforeach; ?>
+                  </div>
+
+                  <!-- Table -->
+                  <div class="protein-table-responsive">
+                    <table class="protein-table" id="protein-table">
+                      <thead>
+                        <tr>
+                          <th style="width: 45px;">#</th>
+                          <th>Food Name &amp; Form</th>
+                          <th>Category</th>
+                          <th style="text-align: right;">Protein / 100g</th>
+                          <th style="text-align: right;">Calories / 100g</th>
+                          <th style="text-align: center;">Amino Acid Quality</th>
+                          <th>Nutritional Highlights</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php $idx = 1; foreach ($allFoods as $food): ?>
+                          <tr class="protein-row" data-category="<?= htmlspecialchars(strtolower($food['source_category'])) ?>" data-name="<?= htmlspecialchars(strtolower($food['name'] . ' ' . $food['type'] . ' ' . $food['notes'])) ?>">
+                            <td style="font-weight: 700; color: #94a3b8;"><?= $idx++ ?></td>
+                            <td>
+                              <div class="protein-food-name"><?= htmlspecialchars($food['name']) ?></div>
+                              <div class="protein-food-type"><?= htmlspecialchars($food['type']) ?></div>
+                            </td>
+                            <td>
+                              <span class="category-tag"><?= htmlspecialchars($food['source_category']) ?></span>
+                            </td>
+                            <td style="text-align: right;">
+                              <span class="protein-value-badge">
+                                <?= number_format($food['protein_per_100g'], 1) ?>g
+                              </span>
+                            </td>
+                            <td style="text-align: right; font-weight: 600; color: #64748b;">
+                              <?= number_format($food['calories_per_100g'], 0) ?> kcal
+                            </td>
+                            <td style="text-align: center;">
+                              <?php if ($food['is_complete_protein']): ?>
+                                <span class="badge-complete" title="Contains all 9 essential amino acids in optimal ratios">
+                                  <i class="fa fa-check-circle"></i> Complete EAA
+                                </span>
+                              <?php else: ?>
+                                <span class="badge-incomplete" title="Combine with complementary grains or legumes">
+                                  <i class="fa fa-adjust"></i> Incomplete
+                                </span>
+                              <?php endif; ?>
+                            </td>
+                            <td style="color: #475569; font-size: 13px; max-width: 260px; line-height: 1.4;">
+                              <?= htmlspecialchars($food['notes']) ?>
+                            </td>
+                          </tr>
+                        <?php endforeach; ?>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
+
+                <!-- Topics Section -->
+                <div class="blog-single-bottom-modern">
+                  <div class="blog-tag-list">
+                    <span class="blog-tag-title"><i class="fa fa-tags" style="color:#10b981;"></i> Topics:</span>
+                    <a href="Plant-Protein.php" class="blog-tag-chip">#PlantProtein</a>
+                    <a href="Vegan-Diet-Plan.php" class="blog-tag-chip">#VeganGains</a>
+                    <a href="food-nutrtion.php" class="blog-tag-chip">#NutritionFacts</a>
+                    <a href="Muscles.php" class="blog-tag-chip">#MuscleBuilding</a>
+                  </div>
+                </div>
+
               </div>
-            </div>
+            </article>
           </div>
         </div>
-      </article>
 
-          </div>
-        </div>
         <?php include("sidebar.php"); ?>
       </div>
     </div>
@@ -225,5 +201,37 @@ include('header.php');
     </div>
   </section>
   <!-- End Centered Comment Section -->
+
+  <!-- Interactive Client-side Filter Script -->
+  <script>
+    var currentProteinCategory = 'all';
+
+    function filterProteinCategory(cat, btn) {
+      currentProteinCategory = cat.toLowerCase();
+      var buttons = document.querySelectorAll('.protein-filter-btn');
+      buttons.forEach(function(b) { b.classList.remove('active'); });
+      if (btn) btn.classList.add('active');
+      filterProteinTable();
+    }
+
+    function filterProteinTable() {
+      var query = document.getElementById('protein-search').value.toLowerCase().trim();
+      var rows = document.querySelectorAll('.protein-row');
+      
+      rows.forEach(function(row) {
+        var rowCat = row.getAttribute('data-category');
+        var rowText = row.getAttribute('data-name');
+        
+        var matchesCat = (currentProteinCategory === 'all' || rowCat === currentProteinCategory);
+        var matchesQuery = (query === '' || rowText.indexOf(query) !== -1);
+        
+        if (matchesCat && matchesQuery) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+  </script>
 
 <?php include("footer.php"); ?>

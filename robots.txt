@@ -1,0 +1,10 @@
+# Robots.txt for Lean'N'Green Fitness & Nutrition
+User-agent: *
+Allow: /
+
+# Disallow private admin interfaces
+Disallow: /admin/
+Disallow: /admin/html/
+
+# Sitemap location
+Sitemap: http://localhost/fitness-website-master/sitemap.xml

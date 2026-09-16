@@ -1,0 +1,9 @@
+# Lean'N'Green Apache Configuration
+# Custom 404 Error Document
+ErrorDocument 404 /fitness-website-master/404.php
+
+# Prevent directory listings
+Options -Indexes
+
+# UTF-8 Encoding
+AddDefaultCharset UTF-8

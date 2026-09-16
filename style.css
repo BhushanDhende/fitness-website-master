@@ -3398,3 +3398,255 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 20px;
   }
 }
+
+/* ===================================================
+   PRODUCTION CHECKLIST UX & MOBILE ENHANCEMENTS
+   =================================================== */
+
+/* --- Point 17: Cookie Consent Banner --- */
+.cookie-consent-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.35);
+  padding: 16px 24px;
+  animation: slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUpFade {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.cookie-consent-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cookie-consent-text {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.5;
+  flex: 1 1 500px;
+}
+
+.cookie-consent-icon {
+  font-size: 26px;
+  color: #fbbf24;
+  flex-shrink: 0;
+}
+
+.cookie-consent-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.btn-cookie-accept {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+}
+
+.btn-cookie-accept:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.45);
+}
+
+.btn-cookie-decline {
+  background: transparent;
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-cookie-decline:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* --- Point 11: Sticky Mobile Action Bar --- */
+.sticky-mobile-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.35);
+  z-index: 99990;
+  padding: 4px 6px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .sticky-mobile-cta {
+    display: flex !important;
+  }
+  body {
+    padding-bottom: 60px !important;
+  }
+  .cookie-consent-bar {
+    bottom: 60px !important;
+  }
+}
+
+.mobile-cta-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  text-decoration: none !important;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  min-width: 50px;
+}
+
+.mobile-cta-btn i {
+  font-size: 16px;
+  margin-bottom: 2px;
+  transition: transform 0.2s;
+}
+
+.mobile-cta-btn:hover,
+.mobile-cta-btn:focus,
+.mobile-cta-btn:active {
+  color: #34d399;
+}
+
+.mobile-cta-btn.highlight {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.mobile-cta-btn.highlight i {
+  color: #34d399;
+}
+
+/* --- Point 12: Loading States --- */
+.btn-loading {
+  position: relative !important;
+  pointer-events: none !important;
+  opacity: 0.75 !important;
+  color: transparent !important;
+}
+
+.btn-loading::after {
+  content: "" !important;
+  position: absolute !important;
+  width: 18px !important;
+  height: 18px !important;
+  top: 50% !important;
+  left: 50% !important;
+  margin-top: -9px !important;
+  margin-left: -9px !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 50% !important;
+  border-top-color: #ffffff !important;
+  animation: spinnerRotate 0.7s linear infinite !important;
+  z-index: 5 !important;
+}
+
+@keyframes spinnerRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Point 13: Form Error States --- */
+.input-error {
+  border-color: #ef4444 !important;
+  background-color: #fef2f2 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+.form-error-feedback {
+  color: #ef4444;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  animation: errorShake 0.3s ease-in-out;
+}
+
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+/* --- Point 10: Mobile Breakpoints Optimization --- */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 24px !important;
+    letter-spacing: -0.5px !important;
+  }
+  .hero-desc {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+  .hero-actions .btn {
+    width: 100% !important;
+    margin-bottom: 8px !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+  }
+  .cookie-consent-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cookie-consent-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .cookie-consent-actions button {
+    flex: 1;
+    text-align: center;
+  }
+}

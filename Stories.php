@@ -59,12 +59,12 @@ include('header.php');
             Last year, Mr Universe was won by Norwich-based Barny du Plessis, who says ditching meat from his diet has
             helped give him more energy and improved his recovery times after exercise.
           </p>
-          <img src="http://i.dailymail.co.uk/i/pix/2015/08/24/09/2B9E78EE00000578-3206401-image-a-3_1440406458808.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;">
+          <img src="https://i.dailymail.co.uk/i/pix/2015/08/24/09/2B9E78EE00000578-3206401-image-a-3_1440406458808.jpg" alt="Barny du Plessis vegan bodybuilder" style="max-width:100%; height:auto; display:block; margin:0 auto;" onerror="this.style.display='none'">
           <h3>
-            Muscle without the meat:Barny du Plessis had a successful 20-year body-building career and almost
+            Muscle without the meat: Barny du Plessis had a successful 20-year body-building career and almost
             retired...but turning vegan has seen his body gain even more weight and he's still competing.
           </h3>
-          <img src="http://i.dailymail.co.uk/i/pix/2015/08/24/09/2B9EA58A00000578-3206401-image-a-5_1440406765191.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;">
+          <img src="https://i.dailymail.co.uk/i/pix/2015/08/24/09/2B9EA58A00000578-3206401-image-a-5_1440406765191.jpg" alt="Max Seabrook vegan bodybuilder" style="max-width:100%; height:auto; display:block; margin:0 auto;" onerror="this.style.display='none'">
           <h3>
             Veggie-powered! 25-year-old Max Seabrook from Kent describes turning vegan as the 'best decision' of his
             life
@@ -88,17 +88,16 @@ include('header.php');
             in the novice heavyweight body building category at the competition.
           </p>
           
-          <img src="http://i.dailymail.co.uk/i/pix/2015/08/21/19/2B8F4C0C00000578-0-image-a-48_1440180911936.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;">
+          <img src="https://i.dailymail.co.uk/i/pix/2015/08/21/19/2B8F4C0C00000578-0-image-a-48_1440180911936.jpg" alt="Arvid Beck vegan bodybuilder" style="max-width:100%; height:auto; display:block; margin:0 auto;" onerror="this.style.display='none'">
           <h3>
             Pure vegan: Arvid Beck, 33, from Düsseldorf, Germany has achieved his sculpted frame with a protein-packed
             diet of legumes, grains and oatmeal
-            <h3>
-              <hr>
-              <img
-                src="http://i.dailymail.co.uk/i/pix/2015/08/24/08/2B8F4C6500000578-3206401-image-m-2_1440401984468.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;">
-              <h3>
-                Torre Washington shows off his super-ripped triceps in a body-building competition
-              </h3>
+          </h3>
+          <hr>
+          <img src="https://i.dailymail.co.uk/i/pix/2015/08/24/08/2B8F4C6500000578-3206401-image-m-2_1440401984468.jpg" alt="Torre Washington vegan bodybuilder competing" style="max-width:100%; height:auto; display:block; margin:0 auto;" onerror="this.style.display='none'">
+          <h3>
+            Torre Washington shows off his super-ripped triceps in a body-building competition
+          </h3>
               <p>
                 'Our goals change quite a bit throughout the year whether it is the off season or we are preparing for a
                 competition' explains Dani<br>
@@ -113,21 +112,12 @@ include('header.php');
                 to enjoy foods we love and still have social lives, while still reaching our goals.</p>
               <div class="blog-single-bottom">
                 <div class="row">
-                  <div class="col-md-8">
+                  <div class="col-md-12">
                     <div class="blog-single-tag">
                       <span class="fa fa-tags"></span>
-                      <a href="#">Workout,</a>
-                      <a href="#">Gym,</a>
-                      <a href="#">Exercise</a>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="blog-single-social">
-                      <a href="#"><i class="fa fa-facebook"></i></a>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                      <a href="#"><i class="fa fa-linkedin"></i></a>
-                      <a href="#"><i class="fa fa-google-plus"></i></a>
-                      <a href="#"><i class="fa fa-pinterest"></i></a>
+                      <a href="Muscles.php">Workout</a>,
+                      <a href="Workout-Routine.php">Gym</a>,
+                      <a href="Anatomy-and-Exercises.php">Exercise</a>
                     </div>
                   </div>
                 </div>

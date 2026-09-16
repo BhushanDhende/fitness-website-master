@@ -11,13 +11,40 @@
 }
 
 .input-container {
-    margin: 15px 0 30px;
+    margin: 15px 0 16px;
     display: flex;
     gap: 12px;
     justify-content: center;
     align-items: center;
     width: 100%;
     max-width: 520px;
+}
+
+.food-quick-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 25px;
+    max-width: 600px;
+}
+
+.food-tag-btn {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.food-tag-btn:hover {
+    background: #10b981;
+    color: #ffffff;
+    border-color: #10b981;
 }
 
 .input-container input {

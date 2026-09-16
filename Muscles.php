@@ -172,21 +172,12 @@ include('header.php');
         </div>
         <div class="blog-single-bottom">
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
               <div class="blog-single-tag">
                 <span class="fa fa-tags"></span>
-                <a href="#">Workout,</a>
-                <a href="#">Gym,</a>
-                <a href="#">Exercise</a>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="blog-single-social">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-                <a href="#"><i class="fa fa-pinterest"></i></a>
+                <a href="Muscles.php">Workout</a>,
+                <a href="Workout-Routine.php">Gym</a>,
+                <a href="Anatomy-and-Exercises.php">Exercise</a>
               </div>
             </div>
           </div>
