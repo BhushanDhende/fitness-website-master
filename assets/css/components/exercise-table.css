@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Anatomy & Exercise Table Styles
+   ========================================================================== */
+
+.list {
+  display: block;
+  align-self: center;
+}
+
+.exercise-table {
+  margin: 30px auto;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  width: 60%;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.exercise-table td {
+  padding: 16px 0;
+  text-align: center;
+}
+
+.exercise-btn:hover {
+  background: #388e3c;
+}
+
+@media (max-width: 768px) {
+  .exercise-table {
+    width: 95%;
+  }
+
+  .exercise-btn {
+    width: 100%;
+    margin: 6px 0;
+  }
+}

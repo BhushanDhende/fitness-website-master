@@ -35,6 +35,13 @@ $siteTitle = isset($pageTitle) ? $pageTitle : "Lean'N'Green : Fitness & Nutritio
   <link href="assets/css/components/comments.css?v=2.2" rel="stylesheet">
   <link href="assets/css/components/sidebar.css?v=2.2" rel="stylesheet">
   
+  <!-- Page Specific Stylesheets -->
+  <?php if (!empty($extraCss)): ?>
+    <?php foreach ((array)$extraCss as $cssFile): ?>
+  <link href="<?php echo htmlspecialchars($cssFile); ?>" rel="stylesheet">
+    <?php endforeach; ?>
+  <?php endif; ?>
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">

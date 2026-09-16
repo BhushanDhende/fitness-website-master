@@ -1,17 +1,8 @@
 <?php
 $pageTitle = "Lean'N'Green : Anatomy and Workout";
+$extraCss = 'assets/css/components/exercise-table.css';
 include('header.php');
 ?>
-<style>
-  img {
-    display: inline-block;
-  }
-
-  .list {
-    display: block;
-    align-self: center;
-  }
-</style>
 
 
   <!-- Start single page header -->
@@ -74,37 +65,6 @@ include('header.php');
 
   <!-- End error section -->
   <div class="container">
-    <style>
-      .exercise-table {
-        margin: 30px auto;
-        border-collapse: separate;
-        border-spacing: 0 15px;
-        width: 60%;
-        background: #f9f9f9;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      }
-
-      .exercise-table td {
-        padding: 16px 0;
-        text-align: center;
-      }
-
-      .exercise-btn:hover {
-        background: #388e3c;
-      }
-
-      @media (max-width: 768px) {
-        .exercise-table {
-          width: 95%;
-        }
-
-        .exercise-btn {
-          width: 100%;
-          margin: 6px 0;
-        }
-      }
-    </style>
     <table class="exercise-table">
       <tr>
         <td><a href="Back.php"><button class="comment-btn " style = "width : 200px">Back</button></a></td>

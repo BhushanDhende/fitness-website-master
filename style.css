@@ -86,6 +86,8 @@ h2 {
 
 img{
  border:none;
+ max-width: 100%;
+ display: inline-block;
 }
 
 /* Preloader */
@@ -1427,6 +1429,23 @@ img{
 .blog-news-details h3{
   font-size: 20px;
     color: black;
+}
+
+@media (max-width: 767px) {
+  .blog-news-details.blog-single-details {
+    padding: 10px 8px;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+    font-size: 1em;
+    word-break: break-word;
+  }
+
+  .blog-news-details.blog-single-details h2,
+  .blog-news-details.blog-single-details h3 {
+    font-size: 1.2em;
+    text-align: left;
+  }
 }
 
 .blog-more-btn {

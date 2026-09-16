@@ -2,11 +2,6 @@
 $pageTitle = "Lean'N'Green : Workout Routine";
 include('header.php');
 ?>
-<style>
-  img {
-    display: inline-block;
-  }
-</style>
 
 
   <!-- Start single page header -->

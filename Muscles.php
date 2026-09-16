@@ -170,24 +170,6 @@ include('header.php');
             have healthy, whole foods on hand but eat what you need to get through your workouts effectively.
           </p>
         </div>
-        <style>
-          @media (max-width: 767px) {
-            .blog-news-details.blog-single-details {
-              padding: 10px 8px !important;
-              margin-left: 0 !important;
-              margin-right: 0 !important;
-              text-align: left !important;
-              font-size: 1em !important;
-              word-break: break-word;
-            }
-
-            .blog-news-details.blog-single-details h2,
-            .blog-news-details.blog-single-details h3 {
-              font-size: 1.2em !important;
-              text-align: left !important;
-            }
-          }
-        </style>
         <div class="blog-single-bottom">
           <div class="row">
             <div class="col-md-8">

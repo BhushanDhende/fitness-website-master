@@ -8,6 +8,7 @@
   <title>Admin panel</title>
   
   <link rel="stylesheet" href="styles.min.css" />
+  <link rel="stylesheet" href="admin-carousel.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -83,46 +84,6 @@ include('heder.php'); ?>
   </button>
 </div>
 
-<style>
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-body {
-  min-height: 100vh;
-  width: 100vw;
-  overflow-x: hidden;
-  padding-top: 56px !important;
-}
-.carousel,
-.carousel-inner,
-.carousel-item,
-.carousel-img {
-  width: 100vw !important;
-  height: 100vh !important;
-  min-height: 100vh;
-}
-.carousel-img {
-  object-fit: cover;
-  object-position: center;
-  width: 100vw;
-  height: 100vh;
-  min-height: 100vh;
-  display: block;
-}
-@media (max-width: 767.98px) {
-  .carousel-img {
-    width: 100vw;
-    height: 100vh;
-    min-height: 300px;
-    object-fit: cover;
-    left: 50%;
-    transform: translateX(-50%);
-    position: relative;
-  }
-}
-</style>
 
 </body>
 
