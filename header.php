@@ -27,7 +27,13 @@ $siteTitle = isset($pageTitle) ? $pageTitle : "Lean'N'Green : Fitness & Nutritio
   <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
   
   <!-- Main Stylesheet -->
-  <link href="style.css" rel="stylesheet">
+  <link href="style.css?v=2.2" rel="stylesheet">
+  
+  <!-- Modular Component Stylesheets -->
+  <link href="assets/css/components/header.css?v=2.2" rel="stylesheet">
+  <link href="assets/css/components/footer.css?v=2.2" rel="stylesheet">
+  <link href="assets/css/components/comments.css?v=2.2" rel="stylesheet">
+  <link href="assets/css/components/sidebar.css?v=2.2" rel="stylesheet">
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">

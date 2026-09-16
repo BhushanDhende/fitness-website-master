@@ -143,15 +143,26 @@ include('header.php');
             <?php endforeach; ?>
           </div>
 
-          <div style="background:#ffffff; border-radius:16px; padding:24px; box-shadow:0 6px 18px rgba(0,0,0,0.04); margin-top:20px;">
-            <?php include('comment.php'); ?>
-          </div>
         </div>
         <!-- Sidebar (4 cols) -->
         <?php include('sidebar.php'); ?>
       </div>
     </div>
   </section>
+
+  <!-- Start Centered Comment Section -->
+  <section style="padding: 10px 0 60px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 col-sm-12">
+          <div style="background: #ffffff; border-radius: 16px; padding: 28px; box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05); border: 1px solid #e2e8f0;">
+            <?php include('comment.php'); ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Centered Comment Section -->
 
   <!-- Start subscribe us & footer -->
   <?php include('footer.php'); ?>

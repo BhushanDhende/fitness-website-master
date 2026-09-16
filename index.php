@@ -121,44 +121,44 @@ include('header.php');
   <!-- End slider -->
 
   <!-- Quick Feature Highlights Banner -->
-  <section class="quick-features-bar">
+  <section class="quick-features-bar" style="padding: 35px 0; background: #0b1120; clear: both; position: relative;">
     <div class="container">
       <div class="row">
         <div class="col-md-3 col-sm-6 feature-box-item">
-          <div class="feature-item-inner">
+          <a href="Anatomy-and-Exercises.php" class="feature-item-inner">
             <div class="feat-icon-badge"><i class="fa fa-dumbbell"></i></div>
             <div class="feat-text">
               <h4>Targeted Workouts</h4>
               <p>Chest, Arms, Legs, Back, Shoulders &amp; Core</p>
             </div>
-          </div>
+          </a>
         </div>
         <div class="col-md-3 col-sm-6 feature-box-item">
-          <div class="feature-item-inner">
+          <a href="Plant-Protein.php" class="feature-item-inner">
             <div class="feat-icon-badge"><i class="fa fa-leaf"></i></div>
             <div class="feat-text">
               <h4>Plant-Powered</h4>
               <p>100% vegan nutrition &amp; clean protein sources</p>
             </div>
-          </div>
+          </a>
         </div>
         <div class="col-md-3 col-sm-6 feature-box-item">
-          <div class="feature-item-inner">
+          <a href="Ebooks.php" class="feature-item-inner">
             <div class="feat-icon-badge"><i class="fa fa-book"></i></div>
             <div class="feat-text">
               <h4>Free E-Books</h4>
               <p>Full PDF training guides &amp; anatomy books</p>
             </div>
-          </div>
+          </a>
         </div>
         <div class="col-md-3 col-sm-6 feature-box-item">
-          <div class="feature-item-inner">
+          <a href="BMI-calc.php" class="feature-item-inner">
             <div class="feat-icon-badge"><i class="fa fa-calculator"></i></div>
             <div class="feat-text">
               <h4>Interactive BMI</h4>
               <p>Instant Body Mass Index &amp; health metrics</p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>

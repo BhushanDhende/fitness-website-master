@@ -32,8 +32,11 @@ include('header.php');
   </section>
   <!-- End single page header -->
 
-  <div class="col-md-8">
-    <div class="blog-archive-left">
+  <section id="blog-archive" style="padding: 50px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-12">
+          <div class="blog-archive-left">
       <!-- Start blog news single -->
       <article class="blog-news-single">
         <div class="blog-news-title">
@@ -197,37 +200,31 @@ include('header.php');
           </div>
         </div>
       </article>
-      <!-- Start blog navigation -->
-      <div class="blog-navigation-area">
-        <div class="blog-navigation-prev">
-          <a href="#">
-            <h5>All about Terminologies</h5>
-            <span>Previous Post</span>
-          </a>
+
+          </div>
         </div>
-        <div class="blog-navigation-next">
-          <a href="#">
-            <h5>All about friends story</h5>
-            <span>Next Post</span>
-          </a>
-        </div>
+        <?php
+        include('sidebar.php');
+        ?>
       </div>
-      <!-- Start Comment box -->
-      <?php
-      include 'comment.php';
-      ?>
     </div>
-  </div>
-  <?php
-  include('sidebar.php');
-  ?>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
   </section>
   <!-- End blog archive -->
+
+  <!-- Start Centered Comment Section -->
+  <section style="padding: 10px 0 60px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 col-sm-12">
+          <div style="background: #ffffff; border-radius: 16px; padding: 28px; box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05); border: 1px solid #e2e8f0;">
+            <?php include 'comment.php'; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Centered Comment Section -->
+
   <?php
   include('footer.php');
   ?>

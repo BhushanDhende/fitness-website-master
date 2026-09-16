@@ -1,0 +1,217 @@
+/* ==========================================================================
+   LEAN'N'GREEN - FITNESS SIDEBAR STYLESHEET
+   Component: Sidebar Container, Category List, Mini BMI Widget, Ebook Card, Quotes, Tags
+   ========================================================================== */
+
+.fitness-side-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 0;
+  padding-bottom: 30px;
+}
+
+.sidebar-widget-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  padding: 22px 20px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-widget-card:hover {
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.widget-card-title {
+  font-family: 'Outfit', 'Lato', sans-serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 16px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.text-emerald {
+  color: #10b981 !important;
+}
+
+/* Sidebar Categories List */
+.sidebar-catg-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-catg-list li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 12px;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #334155;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.sidebar-catg-list li a:hover {
+  background: #ecfdf5;
+  color: #059669;
+  border-color: #a7f3d0;
+  transform: translateX(3px);
+}
+
+.badge-cat {
+  font-size: 11px;
+  font-weight: 700;
+  color: #059669;
+  background: rgba(16, 185, 129, 0.12);
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+/* Mini BMI Calculator Widget */
+.sidebar-bmi-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border-color: #cbd5e1;
+}
+
+.bmi-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 12px;
+}
+
+.btn-sidebar-bmi {
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.25);
+}
+
+.btn-sidebar-bmi:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(16, 185, 129, 0.35);
+}
+
+/* Featured Free E-Book Widget */
+.sidebar-ebook-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.badge-free-pdf {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.btn-sidebar-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #10b981;
+  color: #ffffff !important;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none !important;
+  transition: background 0.2s;
+}
+
+.btn-sidebar-download:hover {
+  background: #059669;
+}
+
+/* Trending Fitness Tags */
+.fitness-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.fitness-tag-chip {
+  display: inline-block;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  text-decoration: none !important;
+  transition: all 0.2s;
+}
+
+.fitness-tag-chip:hover {
+  background: #10b981;
+  color: #ffffff !important;
+  border-color: #10b981;
+  transform: translateY(-1px);
+}
+
+/* Daily Motivation Quote Box */
+.sidebar-quote-box {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  border: none;
+}
+
+.sidebar-quote-box .quote-mark {
+  font-size: 24px;
+  color: #10b981;
+  opacity: 0.7;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.sidebar-quote-box .quote-body {
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.5;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+}
+
+.sidebar-quote-box .quote-sign {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #34d399;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+}

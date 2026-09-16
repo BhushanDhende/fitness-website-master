@@ -31,25 +31,186 @@ include('header.php');
     </section>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        .food-search-wrap {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 16px;
+        }
 
         .input-container {
-            margin: 20px 0;
+            margin: 15px 0 30px;
             display: flex;
-            gap: 10px;
+            gap: 12px;
             justify-content: center;
             align-items: center;
             width: 100%;
+            max-width: 520px;
+        }
+
+        .input-container input {
+            padding: 12px 16px;
+            font-size: 15px;
+            flex: 1;
+            border-radius: 6px;
+            border: 1px solid #d1d5db;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .input-container input:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
+        }
+
+        .input-container button {
+            padding: 12px 24px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 6px;
+            border: none;
+            background: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            white-space: nowrap;
+        }
+
+        .input-container button:hover {
+            background: #43a047;
+        }
+
+        .input-container button:active {
+            transform: scale(0.98);
+        }
+
+        #result {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 991px) {
+            #result {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            #result {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .input-container {
+                flex-direction: column;
+                width: 100%;
+            }
+            .input-container input,
+            .input-container button {
+                width: 100%;
+            }
         }
 
         .recipe {
-            border: 1px solid #ddd;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .recipe:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
+            border-color: #4CAF50;
+        }
+
+        .recipe-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
             border-radius: 8px;
-            padding: 16px;
-            margin: 10px auto;
-            max-width: 400px;
-            background: #fafafa;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            margin-bottom: 14px;
+            background: #f3f4f6;
+        }
+
+        .recipe h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #1f2937;
+            text-transform: capitalize;
+            line-height: 1.35;
+        }
+
+        .recipe .category-badge {
+            display: inline-block;
+            align-self: flex-start;
+            background: #e8f5e9;
+            color: #2e7d32;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+        }
+
+        .recipe .nutrients-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: auto;
+            padding-top: 14px;
+            border-top: 1px solid #f3f4f6;
+        }
+
+        .recipe .nutrient-item {
+            background: #f9fafb;
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1px solid #f0f2f5;
+        }
+
+        .recipe .nutri-label {
+            display: block;
+            color: #6b7280;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            margin-bottom: 2px;
+        }
+
+        .recipe .nutri-val {
+            display: block;
+            color: #111827;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 16px;
+            color: #6b7280;
+            padding: 30px;
         }
     </style>
 
@@ -77,17 +238,15 @@ include('header.php');
                                 <br>
                                 <h2>Search Food</h2><br>
                             </div> <br>
-                            <div class="container" style="display: flex; flex-direction: column; align-items: center; font-size: 16px;">
+                            <div class="food-search-wrap">
 
                                 <div class="input-container">
-                                    <input type="text" id="searchInput" placeholder="Enter a food item (e.g., egg)"
-                                        style="padding: 10px; font-size: 16px; width: 300px; border-radius: 5px; border: 1px solid #ccc;">
-                                    <button id="searchButton"
-                                        style="padding: 10px 20px; font-size: 16px; border-radius: 5px; border: none; background: #4CAF50; color: #fff; cursor: pointer; transition: background 0.2s;">
+                                    <input type="text" id="searchInput" placeholder="Enter a food item (e.g., egg, apple, chicken)">
+                                    <button id="searchButton">
                                         Search
                                     </button>
                                 </div>
-                                <div id="result" style="width: 100%;"></div>
+                                <div id="result"></div>
                             </div>
                         </div>
                     </div>
@@ -103,28 +262,38 @@ include('header.php');
 
     <!-- Move the script to after the HTML elements it uses -->
     <script>
-        document.getElementById('searchButton').addEventListener('click', function () {
+        document.getElementById('searchButton').addEventListener('click', performSearch);
+        document.getElementById('searchInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        function performSearch() {
             const query = document.getElementById('searchInput').value.trim();
             if (query) {
                 fetchDetails(query);
             }
-        });
+        }
 
         function fetchDetails(query) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<p class="no-results">Searching nutrition data...</p>';
+
             const apiUrl = `https://api.edamam.com/api/food-database/v2/parser?ingr=${encodeURIComponent(query)}&app_id=155a5345&app_key=485ea0358c8efe6de70541560fe0f44e`;
 
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
                     if (data.hints && data.hints.length > 0) {
-                        displayResults(data.hints.slice(0, 6)); // Display only the first 6 results
+                        displayResults(data.hints.slice(0, 6)); // Display 6 results (2 rows of 3)
                     } else {
-                        document.getElementById('result').innerHTML = '<p>No results found.</p>';
+                        resultDiv.innerHTML = '<p class="no-results">No results found for "' + query + '". Please try another item.</p>';
                     }
                 })
                 .catch(error => {
                     console.error('Error fetching data:', error);
-                    document.getElementById('result').innerHTML = '<p>Error fetching data.</p>';
+                    resultDiv.innerHTML = '<p class="no-results">Error fetching data. Please try again later.</p>';
                 });
         }
 
@@ -134,42 +303,54 @@ include('header.php');
 
             foods.forEach(foodItem => {
                 const food = foodItem.food;
+                const cal = food.nutrients.ENERC_KCAL ? Math.round(food.nutrients.ENERC_KCAL) + ' kcal' : 'N/A';
+                const protein = food.nutrients.PROCNT ? Number(food.nutrients.PROCNT).toFixed(1) + ' g' : 'N/A';
+                const fat = food.nutrients.FAT ? Number(food.nutrients.FAT).toFixed(1) + ' g' : 'N/A';
+                const carbs = food.nutrients.CHOCDF ? Number(food.nutrients.CHOCDF).toFixed(1) + ' g' : 'N/A';
+                const imageHtml = food.image ? `<img src="${food.image}" alt="${food.label}" class="recipe-img" onerror="this.style.display='none'">` : '';
+
                 const foodHtml = `
-            <div class="recipe">
-                <h3>${food.label}</h3>
-                <p>Category: ${food.category}</p>
-                <p>Calories: ${food.nutrients.ENERC_KCAL ? food.nutrients.ENERC_KCAL + ' kcal' : 'N/A'}</p>
-                <p>Protein: ${food.nutrients.PROCNT ? food.nutrients.PROCNT + ' g' : 'N/A'}</p>
-                <p>Fat: ${food.nutrients.FAT ? food.nutrients.FAT + ' g' : 'N/A'}</p>
-                <p>Carbs: ${food.nutrients.CHOCDF ? food.nutrients.CHOCDF + ' g' : 'N/A'}</p>
-            </div>
-        `;
+                    <div class="recipe">
+                        ${imageHtml}
+                        <h3>${food.label}</h3>
+                        ${food.category ? `<span class="category-badge">${food.category}</span>` : ''}
+                        <div class="nutrients-list">
+                            <div class="nutrient-item">
+                                <span class="nutri-label">Calories</span>
+                                <span class="nutri-val">${cal}</span>
+                            </div>
+                            <div class="nutrient-item">
+                                <span class="nutri-label">Protein</span>
+                                <span class="nutri-val">${protein}</span>
+                            </div>
+                            <div class="nutrient-item">
+                                <span class="nutri-label">Fat</span>
+                                <span class="nutri-val">${fat}</span>
+                            </div>
+                            <div class="nutrient-item">
+                                <span class="nutri-label">Carbs</span>
+                                <span class="nutri-val">${carbs}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
                 resultDiv.insertAdjacentHTML('beforeend', foodHtml);
             });
         }
     </script>
 
 
-    <!-- Start blog navigation -->
-    <div class="blog-navigation-area">
-        <div class="blog-navigation-prev">
-            <a href="#">
-                <h5>Stories</h5>
-                <span>Previous Post</span>
-            </a>
-        </div>
-        <div class="blog-navigation-next">
-            <a href="#">
-                <h5>All about friends story</h5>
-                <span>Next Post</span>
-            </a>
-        </div>
-    </div>
 
-    <div class="col-md-8">
-        <div class="blog-archive-left">
-            <?php include('comment.php'); ?>
+    <section style="padding: 30px 0 60px 0; background: #f8fafc;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 col-sm-12">
+                    <div style="background: #ffffff; border-radius: 16px; padding: 28px; box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05); border: 1px solid #e2e8f0;">
+                        <?php include('comment.php'); ?>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
     <?php include('footer.php'); ?>
