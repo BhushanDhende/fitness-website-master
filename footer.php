@@ -69,11 +69,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['subscribe_email'])) {
             Subscribe to our Newsletter
           </h2>
           <p class="subscribe-subtitle">
-            Get free workout routines, delicious vegan recipes, and science-backed training tips delivered straight to your inbox.
+            Get free workout routines, delicious vegan recipes, and science-backed training tips delivered straight to
+            your inbox.
           </p>
-          <?php if (!empty($subscribe_msg)) echo $subscribe_msg; ?>
+          <?php if (!empty($subscribe_msg))
+            echo $subscribe_msg; ?>
           <form action="" method="post" class="subscrib-form">
-            <input type="email" name="subscribe_email" placeholder="Enter your email address..." value="<?php echo $prefill_email; ?>" required>
+            <input type="email" name="subscribe_email" placeholder="Enter your email address..."
+              value="<?php echo $prefill_email; ?>" required>
             <button class="subscribe-btn" type="submit">
               Subscribe
             </button>
@@ -97,10 +100,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['subscribe_email'])) {
           </a>
         </div>
         <p style="font-size:14px; line-height:1.7; color:#94a3b8; margin-bottom:20px;">
-          Your ultimate destination for plant-powered fitness, anatomy insights, progressive workout routines, and free bodybuilding guides.
+          Your ultimate destination for plant-powered fitness, anatomy insights, progressive workout routines, and free
+          bodybuilding guides.
         </p>
         <div>
-          <div class="footer-contact-item"><i class="fa fa-map-marker-alt fa-map-marker"></i> Lean'N'Green Studio, Sector 15, CBD Belapur, Navi Mumbai, Maharashtra 400614, India</div>
+          <div class="footer-contact-item"><i class="fa fa-map-marker-alt fa-map-marker"></i> Lean'N'Green Studio,
+            Sector 15, CBD Belapur, Navi Mumbai, Maharashtra 400614, India</div>
           <div class="footer-contact-item"><i class="fa fa-phone"></i> +91 7021779054</div>
           <div class="footer-contact-item"><i class="fa fa-envelope"></i> bhushandhende34@gmail.com</div>
         </div>
@@ -135,21 +140,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['subscribe_email'])) {
       <!-- Tools & Social -->
       <div class="col-md-3 col-sm-6" style="margin-bottom:30px;">
         <h4 class="footer-col-title">CALCULATORS &amp; SOCIAL</h4>
-        <p style="font-size:14px; margin-bottom:15px;">Check your Body Mass Index (BMI) and health category instantly:</p>
-        <a href="BMI-calc.php" style="display:inline-block; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3); color:#34d399; padding:8px 18px; border-radius:8px; font-size:13px; font-weight:600; text-decoration:none; margin-bottom:20px; transition:all 0.2s;">
+        <p style="font-size:14px; margin-bottom:15px;">Check your Body Mass Index (BMI) and health category instantly:
+        </p>
+        <a href="BMI-calc.php"
+          style="display:inline-block; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3); color:#34d399; padding:8px 18px; border-radius:8px; font-size:13px; font-weight:600; text-decoration:none; margin-bottom:20px; transition:all 0.2s;">
           <i class="fa fa-calculator" style="margin-right:6px;"></i> Open BMI Calculator
         </a>
         <div class="footer-social-links">
-          <a href="https://www.facebook.com/harsh.mankame" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social-btn">
+          <a href="https://www.facebook.com/harsh.mankame" target="_blank" rel="noopener" aria-label="Facebook"
+            class="footer-social-btn">
             <i class="fa-brands fa-facebook-f fa-facebook"></i>
           </a>
-          <a href="https://www.instagram.com/bhushan_dhende_mr.x_?igsh=MTlxbzZidWljdDEzcQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-btn">
+          <a href="https://www.instagram.com/bhushan_dhende_mr.x_?igsh=MTlxbzZidWljdDEzcQ%3D%3D&utm_source=qr"
+            target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-btn">
             <i class="fa-brands fa-instagram fa-instagram"></i>
           </a>
-          <a href="https://www.linkedin.com/in/shubham-bharekar-844657246" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-social-btn">
+          <a href="https://www.linkedin.com/in/shubham-bharekar-844657246" target="_blank" rel="noopener"
+            aria-label="LinkedIn" class="footer-social-btn">
             <i class="fa-brands fa-linkedin-in fa-linkedin"></i>
           </a>
-          <a href="https://github.com/callmeX34" target="_blank" rel="noopener" aria-label="GitHub" class="footer-social-btn">
+          <a href="https://github.com/BhushanDhende" target="_blank" rel="noopener" aria-label="GitHub"
+            class="footer-social-btn">
             <i class="fa-brands fa-github fa-github"></i>
           </a>
         </div>
@@ -160,7 +171,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['subscribe_email'])) {
     <div class="row footer-bottom-bar" style="align-items:center;">
       <div class="col-md-6 col-sm-6 text-left">
         <p style="margin:0;">
-          &copy; <?php echo date('Y'); ?> <span style="color:#e2e8f0; font-weight:600;">Lean'N'Green</span>. All rights reserved.
+          &copy; <?php echo date('Y'); ?> <span style="color:#e2e8f0; font-weight:600;">Lean'N'Green</span>. All rights
+          reserved.
           <span style="margin:0 8px; color:#475569;">&bull;</span>
           <a href="privacy-policy.php" style="color:#94a3b8; text-decoration:none;">Privacy</a>
           <span style="margin:0 8px; color:#475569;">&bull;</span>
@@ -169,7 +181,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['subscribe_email'])) {
       </div>
       <div class="col-md-6 col-sm-6 text-right">
         <p style="margin:0;">
-          Crafted with plant power by <a href="https://github.com/callmeX34" target="_blank" rel="noopener" style="color:#10b981; font-weight:600; text-decoration:none;">callmeX</a>
+          Crafted with plant power by <a href="https://github.com/BhushanDhende" target="_blank" rel="noopener"
+            style="color:#10b981; font-weight:600; text-decoration:none;">callmeX</a>
         </p>
       </div>
     </div>
@@ -178,14 +191,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['subscribe_email'])) {
 <!-- End footer -->
 
 <!-- Cookie Consent Banner -->
-<div id="cookieConsentBanner" class="cookie-consent-bar" style="display:none;" role="dialog" aria-label="Cookie consent">
+<div id="cookieConsentBanner" class="cookie-consent-bar" style="display:none;" role="dialog"
+  aria-label="Cookie consent">
   <div class="cookie-consent-inner">
     <div class="cookie-consent-text">
       <i class="fa fa-cookie-bite cookie-consent-icon"></i>
-      <span>We use cookies to optimize site performance, remember your preferences, and analyze website traffic. By using Lean'N'Green, you agree to our <a href="privacy-policy.php">Privacy Policy</a>.</span>
+      <span>We use cookies to optimize site performance, remember your preferences, and analyze website traffic. By
+        using Lean'N'Green, you agree to our <a href="privacy-policy.php">Privacy Policy</a>.</span>
     </div>
     <div class="cookie-consent-actions">
-      <button type="button" id="acceptCookiesBtn" class="btn-cookie-accept"><i class="fa fa-check"></i> Accept All</button>
+      <button type="button" id="acceptCookiesBtn" class="btn-cookie-accept"><i class="fa fa-check"></i> Accept
+        All</button>
       <button type="button" id="declineCookiesBtn" class="btn-cookie-decline">Decline</button>
     </div>
   </div>
@@ -228,4 +244,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['subscribe_email'])) {
 <script type="text/javascript" src="assets/js/custom.js"></script>
 
 </body>
+
 </html>
